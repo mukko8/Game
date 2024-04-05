@@ -20,19 +20,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            //左右に回転
-            if(Input.GetAxis("Mouse X")!=0){
-                transform.Rotate(0,Input.GetAxis("Mouse X")*rotateSpeed ,0 );
-            }
-        if(controller.isGrounded){
-            //前後左右に移動
-            moveDirection.z = Input.GetAxis("Vertical") * speed;       
-            moveDirection.x = Input.GetAxis("Horizontal") * speed;       
-             
+        //左右に回転
+        //if(Input.GetAxis("Mouse X")!=0){
+            transform.Rotate(0,Input.GetAxis("Mouse X")*rotateSpeed ,0 );
+        //}
+        //前後左右に移動
+        moveDirection.z = Input.GetAxis("Vertical") * speed;       
+        moveDirection.x = Input.GetAxis("Horizontal") * speed;       
+        
+        if(controller.isGrounded){     
             //ジャンプ
             if(Input.GetButton("Jump")){
                 moveDirection.y=speedJump;
             }
+        }
+        //攻撃
+        if(Input.GetButtonDown("Fire1")){
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
