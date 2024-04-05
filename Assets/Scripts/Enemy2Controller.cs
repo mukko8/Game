@@ -9,8 +9,8 @@ public class Enemy2Controller : MonoBehaviour
     public GameObject canonball;
     private int count=0;
     float rotationSpeed=5f;//方向回転スピード
-    float canonballDelay=2f; //最初のcanonballが出るまでの待機時間
-    float delayTimer=0f;//待機時間計算用
+    //float canonballDelay=2f; //最初のcanonballが出るまでの待機時間
+    //float delayTimer=0f;//待機時間計算用
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +35,11 @@ public class Enemy2Controller : MonoBehaviour
                 Time.deltaTime*rotationSpeed
             );
             //delayTimerを増加
-            delayTimer+=Time.deltaTime;
+            //delayTimer+=Time.deltaTime;
             count++;
             Debug.Log(count);
             //canonballの待機時間達したか確認
-            if(delayTimer>=canonballDelay){
+            //if(delayTimer>=canonballDelay){
                 //連射間隔
                 if(count%20==0){
                     //canonballを出現させる
@@ -50,9 +50,9 @@ public class Enemy2Controller : MonoBehaviour
                         );
                 }
             
-            }
+            //}
             //タイマーをリセット
-            delayTimer=0f;
+            //delayTimer=0f;
         }
     }
 }
