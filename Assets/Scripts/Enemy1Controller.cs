@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Enemy1Controller : MonoBehaviour
 {
     public Transform player;
+    Animator animator;
     //索敵範囲
     public float traceDist =15.0f;
     NavMeshAgent nav;
@@ -41,7 +42,7 @@ public class Enemy1Controller : MonoBehaviour
     }
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")){
-
+            animator.SetTrigger("attack");           
         }
     }
 }
