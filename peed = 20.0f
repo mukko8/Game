@@ -1,0 +1,27 @@
+* 3699f95 [31m (HEAD -> dev, origin/dev) [32m2024-04-05 [34msteel [mEnemy2修正
+*   b90f6f4 [31m (test) [32m2024-04-05 [34msteel [mscenestage,player配置
+[32m|[m[33m\[m  
+* [33m|[m 4901f66 [31m [32m2024-04-05 [34msteel [mEnemy2追加
+* [33m|[m f6830a4 [31m [32m2024-04-05 [34msteel [mblack名前変更
+* [33m|[m 9c57277 [31m [32m2024-04-05 [34msteel [mEnemy追加
+[33m|[m *   472ba13 [31m (muna/master) [32m2024-04-05 [34mguniguni [mMerge remote-tracking branch 'tagu/dev' into test
+[33m|[m [34m|[m[35m\[m  
+[33m|[m * [35m|[m be10415 [31m [32m2024-04-05 [34mguniguni [m仮
+[33m|[m [35m|[m * 8c054ce [31m [32m2024-04-05 [34mttaguchi [mplayercontrollerとcameracontroller作成
+[33m|[m * [35m|[m 74377f2 [31m [32m2024-04-05 [34mguniguni [mCity暫定版改良
+[33m|[m [35m|[m * 50508a2 [31m [32m2024-04-05 [34mttaguchi [mplayercontrollerとcameracontroller2
+[33m|[m * [35m|[m e9add40 [31m [32m2024-04-05 [34mguniguni [mCity暫定版
+[33m|[m [35m|[m * 62c9e00 [31m [32m2024-04-05 [34mttaguchi [mplayercontrollerとcameracontroller
+[33m|[m [35m|[m[35m/[m  
+* [35m/[m 16880d5 [31m [32m2024-04-04 [34msteel [mEnemy途中
+[35m|[m[35m/[m  
+* 0da1f40 [31m [32m2024-04-04 [34mguniguni [m初期化
+* e36534b [31m [32m2024-04-04 [34msteel [mPlane追加
+* 97497ae [31m [32m2024-04-04 [34mttaguchi [mcylinder追加
+* ba1f6c0 [31m [32m2024-04-04 [34msteel [mSphere追加
+*   64ec4b7 [31m [32m2024-04-04 [34mguniguni [mMerge remote-tracking branch 'tagu/dev'
+[36m|[m[1;31m\[m  
+* [1;31m|[m d71f270 [31m [32m2024-04-04 [34mguniguni [msettigs.json修正
+[1;31m|[m * 71b556b [31m [32m2024-04-04 [34mttaguchi [mcube追加
+[1;31m|[m[1;31m/[m  
+* ef51f26 [31m (origin/master, origin/HEAD, master) [32m2024-04-04 [34mguniguni [mfirst-commit

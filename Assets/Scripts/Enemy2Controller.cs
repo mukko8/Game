@@ -7,11 +7,12 @@ public class Enemy2Controller : MonoBehaviour
 {
     public Transform player;
     public GameObject canonball;
+    public float ballSpeed=50f;
     private int count=0;
     float rotationSpeed=10f;//方向回転スピード
     float canonballDelay=10f; //最初のcanonballが出るまでの待機時間
     float delayTimer=0f;//待機時間計算用
-    //最初のcaconballが出現したかどうか
+    //最初のcanonballが出現したかどうか
     bool firstCanonball;
     // Start is called before the first frame update
     void Start()
@@ -53,7 +54,7 @@ public class Enemy2Controller : MonoBehaviour
                     firstCanonball=true;//最初のcanonballが出現したこと
             }
                 //連射間隔
-            if(count%40==0){
+                if(count%ballSpeed==0){
                 //canonballを出現させる
                 Instantiate(
                     canonball,

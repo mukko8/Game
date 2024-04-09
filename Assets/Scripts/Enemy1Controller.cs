@@ -9,11 +9,13 @@ public class Enemy1Controller : MonoBehaviour
     Animator animator;
     //索敵範囲
     public float traceDist =15.0f;
+    float rotationSpeed=10f;//方向回転スピード
     NavMeshAgent nav;
 
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+        nav.speed = 5.0f; // 移動速度
         //毎フレーム距離の計測をする必要はないのでコルーチンで行う。
         StartCoroutine(CheckDist());
     }
@@ -28,6 +30,14 @@ public class Enemy1Controller : MonoBehaviour
             //索敵範囲に入ったか？
             if (dist < traceDist)
             {
+                //プレイヤーの方向への回転を計算
+                Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
+                //プレイヤーの方向に滑らかに回転
+                transform.rotation=Quaternion.Slerp(
+                transform.rotation,
+                targetRotation,
+                Time.deltaTime*rotationSpeed
+            );
                 //プレイヤーの位置を目的地に設定
                 nav.SetDestination(player.position);
                 //追跡再開
@@ -40,8 +50,8 @@ public class Enemy1Controller : MonoBehaviour
             }
         }
     }
-    void OnTriggerStay(Collider other) {
-        if(other.CompareTag("Player")){
+    void OnCollisionStay(Collision other) {
+        if(other.gameObject.CompareTag("Player")){
             //animator.SetTrigger("attack");           
         }
     }
