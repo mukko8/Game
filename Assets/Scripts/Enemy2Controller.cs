@@ -76,4 +76,9 @@ public class Enemy2Controller : MonoBehaviour
         );
         firstCanonball=true;
     }
+    void OnCollisionStay(Collision other) {
+        if(other.gameObject.CompareTag("Player")){
+            //animator.SetTrigger("attack");           
+        }
+    }
 }

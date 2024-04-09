@@ -49,9 +49,11 @@ public class Enemy4Controller : MonoBehaviour
             }
         }
     }
-    void OnCollisionStay(Collision other) {
+    void OnCollisionEnter(Collision other) {
+        Debug.Log("4の攻撃");
         if(other.gameObject.CompareTag("Player")){
-            //animator.SetTrigger("attack");           
+            //animator.SetTrigger("attack");
+            Debug.Log("4の攻撃");
         }
     }
 }
