@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy1Controller : MonoBehaviour
+public class Enemy4Controller : MonoBehaviour
 {
     public Transform player;
     Animator animator;
@@ -49,10 +49,11 @@ public class Enemy1Controller : MonoBehaviour
             }
         }
     }
-    void OnCollisionStay(Collision other) {
+    void OnCollisionEnter(Collision other) {
+        Debug.Log("4の攻撃");
         if(other.gameObject.CompareTag("Player")){
             //animator.SetTrigger("attack");
-            Debug.Log("1の攻撃");           
+            Debug.Log("4の攻撃");
         }
     }
 }
