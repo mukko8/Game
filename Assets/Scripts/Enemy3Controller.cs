@@ -20,7 +20,6 @@ public class Enemy3Controller : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        nav.speed = 3.0f; // 移動速度
         //毎フレーム距離の計測をする必要はないのでコルーチンで行う。
         StartCoroutine(CheckDist());
     }
