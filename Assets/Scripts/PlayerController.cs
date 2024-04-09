@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float speedJump;
     public float rotateSpeed;
-    public GameObject HitEffect;
+    public GameObject Bullet; 
+   
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -44,20 +45,9 @@ public class PlayerController : MonoBehaviour
             }
         }
         //攻撃
-        if(Input.GetButtonDown("Fire1")){
-            //画面の中心に向かってraycastを飛ばす
-            /*Ray ray = Camera.main.ScreenPointToRay(
-                Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
-            );
-
-            RaycastHit hit;
-
-            if(Physics.Raycast(ray,out hit, 100f)) {
-                Instantiate(HitEffect, hit.point, Quaternion.identity);
-                //Destroy(hit.collider.gameObject);
-                Destroy(HitEffect,0.5f);
-            }
-            */
+        if(Input.GetMouseButtonDown(0)){
+            Instantiate(Bullet,transform.position+Vector3.forward,Quaternion.identity);
+            
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
