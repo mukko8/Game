@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         //攻撃
         if(Input.GetButtonDown("Fire1")){
             //画面の中心に向かってraycastを飛ばす
-            Ray ray = Camera.main.ScreenPointToRay(
+            /*Ray ray = Camera.main.ScreenPointToRay(
                 Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
             );
 
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
                 //Destroy(hit.collider.gameObject);
                 Destroy(HitEffect,0.5f);
             }
-            
+            */
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
