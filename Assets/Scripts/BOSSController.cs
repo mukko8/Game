@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy1Controller : MonoBehaviour
+public class BOSSController : MonoBehaviour
 {
     public Transform player;
     Animator animator;
     //索敵範囲
-    public float traceDist =15.0f;
-    public float damage=5.0f;//攻撃ダメージ
-    public float enemyHP=20.0f;
-    float rotationSpeed=10.0f;//方向回転スピード
+    public float traceDist =30.0f;
+    public float damage=50.0f;//攻撃ダメージ
+    float rotationSpeed=10f;//方向回転スピード
     NavMeshAgent nav;
 
     void Start()
@@ -51,32 +50,9 @@ public class Enemy1Controller : MonoBehaviour
             }
         }
     }
-    void OnCollisionStay(Collision other) {
+    void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Player")){
             //animator.SetTrigger("attack");
-            Debug.Log("1の攻撃");           
         }
     }
-    void OnTriggerEnter(Collider other)
-    {
-    // ぶつかった相手に「Attack」というタグ（Tag）がついていたら
-    if (other.gameObject.CompareTag("Attack")) //タグ諸々は仮
-    {
-        // 敵のHPをプレイヤーのatk分、減少させる
-        //enemyHP -= playerstates.atk;
-
-        // 敵のHPが0になったら敵オブジェクトを破壊する
-        if (enemyHP <= 0)
-        {
-            Destroy(transform.root.gameObject);
-        }
-
-        
-    }
 }
-    public interface IDamageable{
-            public void Damage(float value);
-            public void Death();
-        }
-}
-
