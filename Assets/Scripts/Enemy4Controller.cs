@@ -10,6 +10,7 @@ public class Enemy4Controller : MonoBehaviour
     //索敵範囲
     public float traceDist =15.0f;
     public float damage=5.0f;//攻撃ダメージ
+    public float enemyHP=20.0f;
     float rotationSpeed=10f;//方向回転スピード
     NavMeshAgent nav;
 
@@ -50,11 +51,21 @@ public class Enemy4Controller : MonoBehaviour
             }
         }
     }
-    void OnCollisionEnter(Collision other) {
-        Debug.Log("4の攻撃");
-        if(other.gameObject.CompareTag("Player")){
-            //animator.SetTrigger("attack");
+    void OnTriggerStay(Collider other)
+    {
+    // ぶつかった相手に「Player」というタグがついていたら
+        if (other.gameObject.CompareTag("Player"))
+        {
             Debug.Log("4の攻撃");
+            // 敵のHPをプレイヤーのatk分、減少させる
+            //enemyHP -= playerstates.atk;
+
+            // 敵のHPが0になったら敵オブジェクトを破壊する
+            if (enemyHP <= 0)
+            {
+                Destroy(transform.root.gameObject);
+            }
         }
+    
     }
 }

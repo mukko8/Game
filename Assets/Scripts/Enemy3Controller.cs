@@ -8,6 +8,7 @@ public class Enemy3Controller : MonoBehaviour
     public Transform player;
     public GameObject canonball;
     public float ballSpeed=4f;
+    public float enemyHP=30.0f;
     private int count=0;
     Animator animator;
     //索敵範囲

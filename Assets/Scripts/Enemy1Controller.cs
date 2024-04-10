@@ -11,7 +11,6 @@ public class Enemy1Controller : MonoBehaviour
     public float traceDist =15.0f;
     public float damage=5.0f;//攻撃ダメージ
     public float enemyHP=20.0f;
-    float hp;
     float rotationSpeed=10.0f;//方向回転スピード
     NavMeshAgent nav;
 
@@ -52,17 +51,12 @@ public class Enemy1Controller : MonoBehaviour
             }
         }
     }
-    void OnCollisionStay(Collision other) {
-        if(other.gameObject.CompareTag("Player")){
-            //animator.SetTrigger("attack");
-            Debug.Log("1の攻撃");           
-        }
-    }
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
     // ぶつかった相手に「Player」というタグがついていたら
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("1の攻撃");
             // 敵のHPをプレイヤーのatk分、減少させる
             //enemyHP -= playerstates.atk;
 

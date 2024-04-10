@@ -6,10 +6,17 @@ using UnityEngine.AI;
 public class BOSSController : MonoBehaviour
 {
     public Transform player;
+    public GameObject canonball;
+    public float ballSpeed=4f;
+    public float enemyHP=300.0f;
+    private int count=0;
     Animator animator;
     //索敵範囲
     public float traceDist =30.0f;
+    //停止するプレイヤーとの距離
+    public float stopDist=7.0f;
     public float damage=50.0f;//攻撃ダメージ
+    
     float rotationSpeed=10f;//方向回転スピード
     NavMeshAgent nav;
 
@@ -24,12 +31,13 @@ public class BOSSController : MonoBehaviour
         while (true)
         {
             //1秒間に5回距離を計測する。
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             //プレイヤーとの距離を計測
             float dist = Vector3.Distance(player.position, transform.position);
             //索敵範囲に入ったか？
             if (dist < traceDist)
             {
+                RotationCalc();
                 //プレイヤーの方向への回転を計算
                 Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
                 //プレイヤーの方向に滑らかに回転
@@ -37,11 +45,35 @@ public class BOSSController : MonoBehaviour
                 transform.rotation,
                 targetRotation,
                 Time.deltaTime*rotationSpeed
-            );
-                //プレイヤーの位置を目的地に設定
-                nav.SetDestination(player.position);
-                //追跡再開
-                nav.isStopped=false;
+                );
+                //プレイヤーからstopDist離れた位置を目的地に設定
+                Vector3 targetPosition=player.position+(transform.position-player.position).normalized*stopDist;
+                nav.SetDestination(targetPosition);
+                count++;
+
+                if(dist<=stopDist/2){
+                    //直接攻撃
+
+                }else if(dist<stopDist){
+                    //プレイヤーの方向への回転を計算
+                    RotationCalc();
+                    //y軸回転
+                    transform.rotation=Quaternion.Euler(0f,targetRotation.eulerAngles.y,0f);
+                    //追跡を辞める
+                    nav.isStopped=true;
+                    //連射間隔
+                    if(count%ballSpeed==0){
+                        //canonballを出現させる
+                        Instantiate(
+                        canonball,
+                        transform.position,
+                        Quaternion.identity
+                        );
+                    }
+                }else{
+                    //追跡再開
+                    nav.isStopped=false;
+                }
             }
             else
             {
@@ -50,7 +82,11 @@ public class BOSSController : MonoBehaviour
             }
         }
     }
-    void OnCollisionEnter(Collision other) {
+    void RotationCalc(){
+        //プレイヤーの方向への回転を計算
+        Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
+    }
+    void OnCoTriggerStay(Collider other) {
         if(other.gameObject.CompareTag("Player")){
             //animator.SetTrigger("attack");
         }

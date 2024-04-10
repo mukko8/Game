@@ -5,7 +5,7 @@ using UnityEngine;
 public class CanonballController : MonoBehaviour
 {
     private GameObject player;
-    public float gamage=10.0f;
+    public float damage=10.0f;
     // Start is called before the first frame update
     void Start()
     {
