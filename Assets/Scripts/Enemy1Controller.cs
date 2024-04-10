@@ -49,8 +49,8 @@ public class Enemy1Controller : MonoBehaviour
             }
         }
     }
-    void OnCollisionStay(Collision other) {
-        if(other.gameObject.CompareTag("Player")){
+    void OnCollisionStay(Collision collision) {
+        if(collision.gameObject.CompareTag("Player")){
             //animator.SetTrigger("attack");
             Debug.Log("1の攻撃");           
         }
