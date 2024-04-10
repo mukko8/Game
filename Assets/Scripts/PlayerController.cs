@@ -22,28 +22,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentSpeed;
-        //左右に回転
-        if(Input.GetAxis("Mouse X")!=0){
-            transform.Rotate(0,Input.GetAxis("Mouse X")*rotateSpeed ,0 );
-        }
-        //ダッシュ
-        if(Input.GetKey(KeyCode.LeftShift)){
-            currentSpeed = speed * 3.0f;
-        }else{
-            currentSpeed = speed;
-        }
-        
-        //前後左右に移動
-        moveDirection.z = Input.GetAxis("Vertical") * currentSpeed;       
-        moveDirection.x = Input.GetAxis("Horizontal") * currentSpeed;       
-        
+        float currentSpeed = speed;
+                 
         if(controller.isGrounded){     
             //ジャンプ
             if(Input.GetButton("Jump")){
                 moveDirection.y=speedJump;
             }
+            //ダッシュ
+            if(Input.GetKey(KeyCode.LeftShift)){
+                currentSpeed = speed * 3.0f;
+            }else{
+                currentSpeed = speed;
+            }
+        } 
+        //左右に回転
+        if(Input.GetAxis("Mouse X")!=0){
+            transform.Rotate(0,Input.GetAxis("Mouse X")*rotateSpeed ,0 );
         }
+        //前後左右に移動
+        moveDirection.z = Input.GetAxis("Vertical") * currentSpeed;       
+        moveDirection.x = Input.GetAxis("Horizontal") * currentSpeed;
         //攻撃
         if(Input.GetMouseButtonDown(0)){
            bl.BulletShot(); 
