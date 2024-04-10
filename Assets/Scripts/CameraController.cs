@@ -16,9 +16,8 @@ public class CameraController : MonoBehaviour {
     //左右はplayerの旋回と連動するので　上下方向のみ  
 		look.y += Input.GetAxis("Mouse Y")*0.02f;
 		//playerの少し上（＋上下方向look分）に向く
-		if(look.y <= 10){
-			//transform.LookAt (player.position+Vector3.up*3.0f+look);
+		if(look.y <= 2 && look.y >= -0.5){
+			transform.forward=player.forward+look;
 		}
-		transform.forward=player.forward+look;
 	}
 }

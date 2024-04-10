@@ -13,10 +13,12 @@ public class PlayerController : MonoBehaviour
     public float speedJump;
     public float rotateSpeed;
     public BulletLuncher bl; 
+    int weponIndex;
    
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        weponIndex = 0;
     }
 
     // Update is called once per frame
@@ -43,6 +45,11 @@ public class PlayerController : MonoBehaviour
         //前後左右に移動
         moveDirection.z = Input.GetAxis("Vertical") * currentSpeed;       
         moveDirection.x = Input.GetAxis("Horizontal") * currentSpeed;
+        
+        //持ち替え
+        if(Input.GetMouseButtonDown(1)){
+            weponIndex ++;
+        }
         //攻撃
         if(Input.GetMouseButtonDown(0)){
            bl.BulletShot(); 

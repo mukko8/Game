@@ -19,8 +19,8 @@ public class BulletController : MonoBehaviour
         );
         //対象との距離に応じて角度に補正をつける
         Vector3 ofset = new Vector3(0,0.01f,0);
-        if(Physics.Raycast(ray,out hit, 100f)) {
-            ofset.y =  3.1f/hit.distance;
+        if(Physics.Raycast(ray,out hit, 100f) &&hit.distance>=5.0f) {
+            ofset.y =3.1f/hit.distance;
         }
         //bulletを飛ばす
         GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* 40.0f;
