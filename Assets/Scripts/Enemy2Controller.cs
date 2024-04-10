@@ -8,7 +8,6 @@ public class Enemy2Controller : MonoBehaviour
     public Transform player;
     public GameObject canonball;
     public float ballSpeed=50.0f;
-    public float damage=20.0f;//攻撃ダメージ
     private int count=0;
     float rotationSpeed=10.0f;//方向回転スピード
     float canonballDelay=10.0f; //最初のcanonballが出るまでの待機時間
