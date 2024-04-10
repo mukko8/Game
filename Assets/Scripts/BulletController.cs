@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public GameObject player;
+    //public GameObject player;
+    //public GameObject Bullet;
     public GameObject HitEffect;
     Ray ray;
     
@@ -27,17 +28,15 @@ public class BulletController : MonoBehaviour
         Debug.Log(hit.distance);
         Destroy(gameObject,1.0f);
     }
+
     private void OnCollisionEnter(Collision other) {
-        Instantiate(HitEffect, hit.point, Quaternion.identity);
         if(other.gameObject.CompareTag("Enemy")){
             Destroy(other.gameObject);
         }
         Destroy(gameObject);
+        Instantiate(HitEffect, hit.point, Quaternion.identity);
         Destroy(HitEffect,0.5f);
     }
-    void Update(){
-        
-    }       
 
 
 }
