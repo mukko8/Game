@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float speedJump;
     public float rotateSpeed;
+    public GameObject Bullet; 
+   
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -20,13 +22,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float currentSpeed;
         //左右に回転
-        //if(Input.GetAxis("Mouse X")!=0){
+        if(Input.GetAxis("Mouse X")!=0){
             transform.Rotate(0,Input.GetAxis("Mouse X")*rotateSpeed ,0 );
-        //}
+        }
+        //ダッシュ
+        if(Input.GetKey(KeyCode.LeftShift)){
+            currentSpeed = speed * 3.0f;
+        }else{
+            currentSpeed = speed;
+        }
+        
         //前後左右に移動
-        moveDirection.z = Input.GetAxis("Vertical") * speed;       
-        moveDirection.x = Input.GetAxis("Horizontal") * speed;       
+        moveDirection.z = Input.GetAxis("Vertical") * currentSpeed;       
+        moveDirection.x = Input.GetAxis("Horizontal") * currentSpeed;       
         
         if(controller.isGrounded){     
             //ジャンプ
@@ -35,7 +45,9 @@ public class PlayerController : MonoBehaviour
             }
         }
         //攻撃
-        if(Input.GetButtonDown("Fire1")){
+        if(Input.GetMouseButtonDown(0)){
+            Instantiate(Bullet,transform.position+Vector3.forward,Quaternion.identity);
+            
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
