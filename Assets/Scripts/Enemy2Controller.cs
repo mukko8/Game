@@ -7,10 +7,10 @@ public class Enemy2Controller : MonoBehaviour
 {
     public Transform player;
     public GameObject canonball;
-    public float ballSpeed=50f;
+    public float ballSpeed=50.0f;
     private int count=0;
-    float rotationSpeed=10f;//方向回転スピード
-    float canonballDelay=10f; //最初のcanonballが出るまでの待機時間
+    float rotationSpeed=10.0f;//方向回転スピード
+    float canonballDelay=10.0f; //最初のcanonballが出るまでの待機時間
     float delayTimer=0f;//待機時間計算用
     //最初のcanonballが出現したかどうか
     bool firstCanonball;

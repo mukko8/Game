@@ -5,6 +5,7 @@ using UnityEngine;
 public class CanonballController : MonoBehaviour
 {
     private GameObject player;
+    public float gamage=10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,8 @@ public class CanonballController : MonoBehaviour
     {
         transform.Translate(0,0,0.15f);//発射スピード
         Destroy(gameObject,1);
+    }
+    void OnCollisionEnter(Collision collision){
+        //ダメージ処理
     }
 }
