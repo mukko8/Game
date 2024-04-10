@@ -10,6 +10,7 @@ public class Enemy1Controller : MonoBehaviour
     //索敵範囲
     public float traceDist =15.0f;
     public float damage=5.0f;//攻撃ダメージ
+    public float enemyHP=20.0f;
     float rotationSpeed=10.0f;//方向回転スピード
     NavMeshAgent nav;
 
@@ -56,4 +57,26 @@ public class Enemy1Controller : MonoBehaviour
             Debug.Log("1の攻撃");           
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+    // ぶつかった相手に「Attack」というタグ（Tag）がついていたら
+    if (other.gameObject.CompareTag("Attack")) //タグ諸々は仮
+    {
+        // 敵のHPをプレイヤーのatk分、減少させる
+        //enemyHP -= playerstates.atk;
+
+        // 敵のHPが0になったら敵オブジェクトを破壊する
+        if (enemyHP <= 0)
+        {
+            Destroy(transform.root.gameObject);
+        }
+
+        
+    }
 }
+    public interface IDamageable{
+            public void Damage(float value);
+            public void Death();
+        }
+}
+
