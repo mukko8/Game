@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float speedJump;
     public float rotateSpeed;
+    public int playerHp;
     public BulletLuncher bl; 
     int weponIndex;
    
@@ -53,6 +54,10 @@ public class PlayerController : MonoBehaviour
         //攻撃
         if(Input.GetMouseButtonDown(0)){
            bl.BulletShot(); 
+        }
+        //被弾
+        if(playerHp <=0){
+            Destroy(gameObject);
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
