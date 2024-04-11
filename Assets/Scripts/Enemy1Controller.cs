@@ -10,14 +10,11 @@ public class Enemy1Controller : MonoBehaviour
     //索敵範囲
     public float traceDist =15.0f;
     public float damage=5.0f;//攻撃ダメージ
-    public float maxEnemyHP=20.0f;//最大HP
-    private float enemyHP;
     float rotationSpeed=10.0f;//方向回転スピード
     NavMeshAgent nav;
 
     void Start()
     {
-        enemyHP=maxEnemyHP;//初期HPを最大HPに設定
         nav = GetComponent<NavMeshAgent>();
         //毎フレーム距離の計測をする必要はないのでコルーチンで行う。
         StartCoroutine(CheckDist());
@@ -64,11 +61,7 @@ public class Enemy1Controller : MonoBehaviour
             //float playerHP=player.hp;//プレイヤークラスのHP
             //playerHP-=damage;
             
-        }
-        if (enemyHP <= 0){
-            Destroy(transform.root.gameObject);
-        }
-    
+        }    
     }
     
 }
