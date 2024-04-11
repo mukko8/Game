@@ -5,7 +5,6 @@ using UnityEngine;
 public class BulletLuncher : MonoBehaviour
 {
     public GameObject Bullet;
-    public GameObject cube0;
     public void BulletShot(){
         Instantiate(Bullet,transform.position,Quaternion.identity);
     }       
