@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float speedJump;
     public float rotateSpeed;
-    public GameObject Bullet; 
+    public BulletLuncher bl; 
    
     void Start()
     {
@@ -46,8 +46,7 @@ public class PlayerController : MonoBehaviour
         }
         //攻撃
         if(Input.GetMouseButtonDown(0)){
-            Instantiate(Bullet,transform.position+Vector3.forward,Quaternion.identity);
-            
+           bl.BulletShot(); 
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
