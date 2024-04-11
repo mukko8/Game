@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4106103670241718998}
   - component: {fileID: 1130102664417535725}
   - component: {fileID: 2753237452423727410}
-  - component: {fileID: 7447253867435779843}
+  - component: {fileID: 4065631966982729413}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Enemy
@@ -147,7 +147,7 @@ MonoBehaviour:
   ballSpeed: 4
   traceDist: 15
   stopDist: 5
---- !u!114 &7447253867435779843
+--- !u!114 &4065631966982729413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

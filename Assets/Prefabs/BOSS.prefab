@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1661892342618910274}
   - component: {fileID: 394994497442836019}
   - component: {fileID: 181460084364451088}
-  - component: {fileID: 467257240898530378}
+  - component: {fileID: 3115531222840184079}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Enemy
@@ -148,7 +148,7 @@ MonoBehaviour:
   traceDist: 30
   stopDist: 7
   damage: 50
---- !u!114 &467257240898530378
+--- !u!114 &3115531222840184079
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

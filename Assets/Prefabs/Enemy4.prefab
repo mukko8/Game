@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2719627016313902941}
   - component: {fileID: 1369523260562758060}
   - component: {fileID: 1469144560697333279}
-  - component: {fileID: 8620039558605029571}
+  - component: {fileID: 6518175144761624691}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: Untagged
@@ -145,7 +145,7 @@ MonoBehaviour:
   player: {fileID: 0}
   traceDist: 15
   damage: 5
---- !u!114 &8620039558605029571
+--- !u!114 &6518175144761624691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
