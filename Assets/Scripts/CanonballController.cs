@@ -16,7 +16,10 @@ public class CanonballController : MonoBehaviour
     void Update()
     {
         transform.Translate(0,0,0.15f);//発射スピード
-        Destroy(gameObject,1);
+        Destroy(gameObject,3);
+    }
+    void OnTriggerEnter(Collider other){
+        Destroy(gameObject);
     }
 
 }

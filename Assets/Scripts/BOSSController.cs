@@ -13,10 +13,10 @@ public class BOSSController : MonoBehaviour
     //索敵範囲
     public float traceDist =30.0f;
     //停止するプレイヤーとの距離
-    public float stopDist=7.0f;
+    public float stopDist=15.0f;
     public float damage=50.0f;//攻撃ダメージ
     
-    float rotationSpeed=10f;//方向回転スピード
+    float rotationSpeed=15f;//方向回転スピード
     NavMeshAgent nav;
 
     void Start()
