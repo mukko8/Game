@@ -14,16 +14,16 @@ public class BulletController : MonoBehaviour
     void Start()
     {
     //画面の中心に向かってraycastを飛ばす
-       ray = Camera.main.ScreenPointToRay(
-        Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
+        ray = Camera.main.ScreenPointToRay(
+            Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
         );
-        
-        Vector3 ofset = new Vector3(0,0.05f,0);
-        if(Physics.Raycast(ray,out hit, 100f)) {
-            ofset = new Vector3(0,1.0f/hit.distance,0);
+        //対象との距離に応じて角度に補正をつける
+        Vector3 ofset = new Vector3(0,0.01f,0);
+        if(Physics.Raycast(ray,out hit, 100f) &&hit.distance>=5.0f) {
+            ofset.y =3.1f/hit.distance;
         }
-
-        GetComponent<Rigidbody>().velocity=(ray.direction+ofset)* 40.0f;
+        //bulletを飛ばす
+        GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* 40.0f;
         
         Debug.Log(hit.distance);
         Destroy(gameObject,1.0f);
