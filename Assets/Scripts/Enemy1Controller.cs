@@ -56,7 +56,6 @@ public class Enemy1Controller : MonoBehaviour
     // ぶつかった相手に「Player」というタグがついていたら
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("1の攻撃");
 
             //float playerHP=player.hp;//プレイヤークラスのHP
             //playerHP-=damage;
