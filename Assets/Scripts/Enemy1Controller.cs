@@ -50,6 +50,10 @@ public class Enemy1Controller : MonoBehaviour
                 nav.isStopped=true;
             }
         }
+        // 敵のHPが0になったら敵オブジェクトを破壊する
+        if (enemyHP <= 0){
+            Destroy(transform.root.gameObject);
+        }
     }
     void OnTriggerStay(Collider other)
     {
@@ -57,14 +61,10 @@ public class Enemy1Controller : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("1の攻撃");
-            // 敵のHPをプレイヤーのatk分、減少させる
-            //enemyHP -= playerstates.atk;
 
-            // 敵のHPが0になったら敵オブジェクトを破壊する
-            if (enemyHP <= 0)
-            {
-                Destroy(transform.root.gameObject);
-            }
+            //float playerHP=player.hp;//プレイヤークラスのHP
+            //playerHP-=damage;
+            
         }
     
     }

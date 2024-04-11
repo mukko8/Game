@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2173397896088906384}
   m_Layer: 0
   m_Name: Canonball
-  m_TagString: Untagged
+  m_TagString: Canonball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,3 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfc0d5786933da47804f9a29a8396a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
