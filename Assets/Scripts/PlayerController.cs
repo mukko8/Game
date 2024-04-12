@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         weponIndex = 0;
+        playerHp = 100;
     }
 
     // Update is called once per frame
@@ -49,11 +50,12 @@ public class PlayerController : MonoBehaviour
         
         //持ち替え
         if(Input.GetMouseButtonDown(1)){
-            weponIndex ++;
+            //weponIndex ++;
+            //weponIndex %=2;
         }
         //攻撃
         if(Input.GetMouseButtonDown(0)){
-           bl.BulletShot(); 
+           bl.BulletShot(weponIndex); 
         }
         //被弾
         if(playerHp <=0){

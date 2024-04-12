@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class Bullet2Controller : MonoBehaviour
 {
-    public float bulletSpeed = 40.0f;
-    public float bulletDamage = 10;
+    public float bulletSpeed = 50.0f;
+    public float bulletDamage = 3;
     public GameObject bullet;
     public GameObject HitEffect;
     public Enemy1Controller en1;
-
-    GameObject bl;
     Ray ray;
+    
     RaycastHit hit;
-
-    public void Shot()
+    // Start is called before the first frame update
+    void Start()
     {
-        //画面の中心に向かってraycastを飛ばす
+    //画面の中心に向かってraycastを飛ばす
         ray = Camera.main.ScreenPointToRay(
             Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
         );
@@ -25,12 +24,13 @@ public class BulletController : MonoBehaviour
         if(Physics.Raycast(ray,out hit, 100f) &&hit.distance>=5.0f) {
             ofset.y =3.1f/hit.distance + Camera.main.transform.forward.y/3.0f;
         }
-        //bulletを生成して飛ばす
-        bl = Instantiate(bullet,transform.position,Quaternion.identity);
-        bl.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
+        
+        Instantiate(bullet,transform.position,Quaternion.identity);
+        //bulletを飛ばす
+        bullet.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
         
         //Debug.Log(hit.distance);
-        Destroy(bl,1.0f);
+        Destroy(bullet,0.5f);
     }
 
     private void OnCollisionEnter(Collision other) {
@@ -41,10 +41,8 @@ public class BulletController : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
-        Destroy(bl);
+        Destroy(bullet);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
         Destroy(HitEffect,0.5f);
     }
-
-
 }

@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class BulletLuncher : MonoBehaviour
 {
-    public GameObject Bullet;
-    public void BulletShot(){
-        Instantiate(Bullet,transform.position,Quaternion.identity);
+    public BulletController b1;
+    public Bullet2Controller b2;
+    public void BulletShot(int weponIndex){
+        switch(weponIndex){
+            case 0:
+               b1.Shot();
+            break;
+            case 1:
+            break;
+        }
     }       
 }
