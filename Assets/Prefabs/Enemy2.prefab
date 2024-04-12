@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  canonball: {fileID: 6534579147005400926, guid: e141bba28ee205e49bdf9ae3e0279917, type: 3}
+  canonball: {fileID: 6534579147005400926, guid: e6063b5a4e02d5e429f1a0fe7f621fe8, type: 3}
   ballSpeed: 50
 --- !u!65 &331243774781143846
 BoxCollider:

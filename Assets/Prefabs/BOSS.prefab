@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  canonball: {fileID: 0}
+  canonball: {fileID: 6534579147005400926, guid: 499b5aaabad20da48a0141ca5f1df5af, type: 3}
   ballSpeed: 4
   traceDist: 30
   stopDist: 7
