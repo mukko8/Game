@@ -9,9 +9,10 @@ public class S2EnemyGenerator : MonoBehaviour
     public GameObject Enemy1;
     public GameObject Enemy3;
     public GameObject Enemy4;
-    public float span=1.0f;
+    public float span=2.0f;
     float delta=0;
     public float dist=20f;//生成されるプレイヤーからの距離
+    public float EnemySum=100f;//出現する敵の数
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,10 @@ public class S2EnemyGenerator : MonoBehaviour
             float x=Random.Range(player.transform.position.x-dist,player.transform.position.x+dist);
             float z=Random.Range(player.transform.position.z-dist,player.transform.position.z+dist);
             item.transform.position=new Vector3(x,prefabY,z);
-            //item.GetComponent<ItemController>().dropSpeed=this.speed;
+            EnemySum--;
+            if(EnemySum==0){
+                enabled=false;//Updateを停止する
+            }
         }   
     }
 }
