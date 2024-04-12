@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2719627016313902941}
   - component: {fileID: 1369523260562758060}
   - component: {fileID: 1469144560697333279}
+  - component: {fileID: 6518175144761624691}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: Untagged
@@ -144,3 +145,16 @@ MonoBehaviour:
   player: {fileID: 0}
   traceDist: 15
   damage: 5
+--- !u!114 &6518175144761624691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048237415853812053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9229848af2809c4e98795cfecf4727c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
