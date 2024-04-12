@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BOSSHpController : MonoBehaviour
+public class BOSHpController : MonoBehaviour
 {
-    public float maxHP=100f;//最大HP
+    public float maxHP=500f;//最大HP
     private float currentHP;//現在のHP
     // Start is called before the first frame update
     void Start()
@@ -13,17 +13,18 @@ public class BOSSHpController : MonoBehaviour
     }
 
     // Update is called once per frame
-    
+    void Update()
+    {
+        
+    }
     public void TakeDamage(float damage){
         currentHP-=damage;//HPを減らす
         if(currentHP<=0){
             Destroy(gameObject);
+            DestroyAllEnemies();
         }
     }
-    public void OnBOSSDestroyed(){
-        DestroyAllEnemies();
-    }
-    void DestroyAllEnemies(){
+    void DestroyAllEnemies(){//BOSSがやられたらほかのEnemy消える
         GameObject[] enemies=GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies){
             Destroy(enemy);

@@ -164,15 +164,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 519876861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f994da55c07004ba9201968657433b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c85d27c264ebfd499bf68d8f252d05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1143182141}
   Enemy1: {fileID: 710798054}
-  Enemy3: {fileID: 1737493909}
   Enemy4: {fileID: 1971623204}
-  span: 2
+  span: 1
   dist: 20
+  EnemySum: 10
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,11 +701,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aff500e21e91fd94583ee3242694430b, type: 3}
---- !u!1 &1737493909 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 217878616161995904, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
-  m_PrefabInstance: {fileID: 1964428167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1770904565
 PrefabInstance:
   m_ObjectHideFlags: 0
