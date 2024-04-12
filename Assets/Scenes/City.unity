@@ -504,6 +504,7 @@ Transform:
   - {fileID: 313782140}
   - {fileID: 1050831928}
   - {fileID: 28532485}
+  - {fileID: 407023496}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &115466178
@@ -1406,7 +1407,7 @@ GameObject:
   - component: {fileID: 407023494}
   - component: {fileID: 407023493}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1491,12 +1492,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407023492}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -20.1, y: 0.49, z: 77.5}
   m_LocalScale: {x: 168.96, y: 1, z: 283.86}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 69286195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &438564346 stripped
 Transform:
@@ -4107,6 +4108,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1298954689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298954692}
+  - component: {fileID: 1298954691}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1298954691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298954689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd63ce03d3efc9b4b97dcbdcaa0078de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1298954692
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298954689}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1321307632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4374,7 +4419,7 @@ GameObject:
   - component: {fileID: 1383572751}
   - component: {fileID: 1383572750}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: ParkGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7577,9 +7622,9 @@ SceneRoots:
   - {fileID: 69286195}
   - {fileID: 1145164892}
   - {fileID: 1794363898}
-  - {fileID: 407023496}
   - {fileID: 515612218}
   - {fileID: 1382863527}
   - {fileID: 1760836799}
   - {fileID: 1443773520}
   - {fileID: 2031848948}
+  - {fileID: 1298954692}
