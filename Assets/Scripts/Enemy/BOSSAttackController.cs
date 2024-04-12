@@ -6,6 +6,13 @@ public class BOSHpController : MonoBehaviour
 {
     public float maxHP=500f;//最大HP
     private float currentHP;//現在のHP
+    public float damage=50f;//与えるダメージ
+    private void OnTriggerEnter(Collider other){
+        if(currentHP!=0){
+            //ダメージを与える
+            TakeDamage(damage);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +31,7 @@ public class BOSHpController : MonoBehaviour
             DestroyAllEnemies();
         }
     }
-    void DestroyAllEnemies(){//BOSSがやられたらほかのEnemy消える
+    void DestroyAllEnemies(){//BOSSがやられたらほかのEnemyも消える
         GameObject[] enemies=GameObject.FindGameObjectsWithTag("Enemy");
         foreach(GameObject enemy in enemies){
             Destroy(enemy);
