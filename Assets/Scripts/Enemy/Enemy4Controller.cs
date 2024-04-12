@@ -49,15 +49,4 @@ public class Enemy4Controller : MonoBehaviour
             }
         }
     }
-    void OnTriggerStay(Collider other)
-    {
-    // ぶつかった相手に「Player」というタグがついていたら
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("4の攻撃");
-            // 敵のHPをプレイヤーのatk分、減少させる
-            //enemyHP -= playerstates.atk;
-        }
-    
-    }
 }

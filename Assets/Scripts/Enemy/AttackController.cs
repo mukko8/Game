@@ -8,8 +8,10 @@ public class AttackController : MonoBehaviour
     private float currentHP;//現在のHP
     public float damage=10f;//与えるダメージ
     private void OnTriggerEnter(Collider other){
-        if(currentHP!=0){
-            //ダメージを与える
+        if (other.gameObject.CompareTag("Player")&&currentHP!=0)
+        {
+            //animator.SetTrigger("attack");
+            Debug.Log("攻撃");
             TakeDamage(damage);
         }
     }
@@ -25,6 +27,8 @@ public class AttackController : MonoBehaviour
         
     }
     public void TakeDamage(float damage){
+        // 敵のHPをプレイヤーのatk分、減少させる
+       //enemyHP -= playerstates.atk
         currentHP-=damage;//HPを減らす
         if(currentHP<=0){
             Destroy(gameObject);

@@ -88,10 +88,4 @@ public class BOSSController : MonoBehaviour
         //プレイヤーの方向への回転を計算
         Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
     }
-    void OnCoTriggerStay(Collider other) {
-        if(other.gameObject.CompareTag("Player")){
-            //animator.SetTrigger("attack");
-        }
-    }
-    
 }

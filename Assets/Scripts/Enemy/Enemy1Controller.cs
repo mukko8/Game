@@ -51,14 +51,5 @@ public class Enemy1Controller : MonoBehaviour
         }
         
     }
-    void OnTriggerStay(Collider other)
-    {
-    // ぶつかった相手に「Player」というタグがついていたら
-        if (other.gameObject.CompareTag("Player")){
-            //float playerHP=player.hp;//プレイヤークラスのHP
-            //playerHP-=damage;
-        }    
-    }
-    
 }
 
