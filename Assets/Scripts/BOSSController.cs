@@ -25,6 +25,10 @@ public class BOSSController : MonoBehaviour
         //毎フレーム距離の計測をする必要はないのでコルーチンで行う。
         StartCoroutine(CheckDist());
     }
+    void Update()
+    {
+        
+    }
     IEnumerator CheckDist()
     {
         while (true)
@@ -91,4 +95,5 @@ public class BOSSController : MonoBehaviour
             //animator.SetTrigger("attack");
         }
     }
+    
 }
