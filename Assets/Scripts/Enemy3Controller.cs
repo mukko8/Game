@@ -9,14 +9,13 @@ public class Enemy3Controller : MonoBehaviour
     public GameObject canonball;
     public float ballSpeed=4f;
     private int count=0;
-    Animator animator;
     //索敵範囲
     public float traceDist =15.0f;
     //停止するプレイヤーとの距離
     public float stopDist=5.0f;
     float rotationSpeed=10f;//方向回転スピード
     NavMeshAgent nav;
-
+    Animator animator;
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();

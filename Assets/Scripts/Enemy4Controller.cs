@@ -5,13 +5,13 @@ using UnityEngine.AI;
 
 public class Enemy4Controller : MonoBehaviour
 {
-    public Transform player;
-    Animator animator;
+    public Transform player; 
     //索敵範囲
     public float traceDist =15.0f;
     public float damage=5.0f;//攻撃ダメージ
     float rotationSpeed=10f;//方向回転スピード
     NavMeshAgent nav;
+    Animator animator;
 
     void Start()
     {

@@ -14,6 +14,7 @@ public class Enemy2Controller : MonoBehaviour
     float delayTimer=0f;//待機時間計算用
     //最初のcanonballが出現したかどうか
     bool firstCanonball;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class Enemy2Controller : MonoBehaviour
         
     }
     void OnTriggerStay(Collider other){
-        if(other.gameObject.name=="Player"){
+        if(other.gameObject.CompareTag("Player")){
             //transform.LookAt(player);//プレイヤーの方を向く(速度調整できない)
             
             //プレイヤーの方向への回転を計算

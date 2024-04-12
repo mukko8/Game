@@ -9,7 +9,6 @@ public class BOSSController : MonoBehaviour
     public GameObject canonball;
     public float ballSpeed=4f;
     private int count=0;
-    Animator animator;
     //索敵範囲
     public float traceDist =30.0f;
     //停止するプレイヤーとの距離
@@ -18,6 +17,7 @@ public class BOSSController : MonoBehaviour
     
     float rotationSpeed=15f;//方向回転スピード
     NavMeshAgent nav;
+    Animator animator;
 
     void Start()
     {
@@ -52,6 +52,7 @@ public class BOSSController : MonoBehaviour
 
                 if(dist<=stopDist/2){
                     //直接攻撃
+                    //animator.SetTrigger("attack");
 
                 }else if(dist<stopDist){
                     //プレイヤーの方向への回転を計算
