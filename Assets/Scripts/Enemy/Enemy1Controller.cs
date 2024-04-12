@@ -9,7 +9,6 @@ public class Enemy1Controller : MonoBehaviour
     public Transform player;
     //索敵範囲
     public float traceDist =15.0f;
-    public float damage=5.0f;//攻撃ダメージ
     float rotationSpeed=10.0f;//方向回転スピード
     NavMeshAgent nav;
     Animator animator;

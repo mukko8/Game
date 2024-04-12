@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BOSHpController : MonoBehaviour
+public class BOSSAttackController : MonoBehaviour
 {
     public float maxHP=500f;//最大HP
     private float currentHP;//現在のHP

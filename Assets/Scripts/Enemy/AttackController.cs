@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpController : MonoBehaviour
+public class AttackController : MonoBehaviour
 {
     public float maxHP=100f;//最大HP
     private float currentHP;//現在のHP
