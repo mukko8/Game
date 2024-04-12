@@ -6,12 +6,12 @@ using UnityEngine.AI;
 public class Enemy1Controller : MonoBehaviour
 {
     public Transform player;
-    Animator animator;
     //索敵範囲
     public float traceDist =15.0f;
     public float damage=5.0f;//攻撃ダメージ
     float rotationSpeed=10.0f;//方向回転スピード
     NavMeshAgent nav;
+    Animator animator;
 
     void Start()
     {
@@ -54,12 +54,9 @@ public class Enemy1Controller : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
     // ぶつかった相手に「Player」というタグがついていたら
-        if (other.gameObject.CompareTag("Player"))
-        {
-
+        if (other.gameObject.CompareTag("Player")){
             //float playerHP=player.hp;//プレイヤークラスのHP
             //playerHP-=damage;
-            
         }    
     }
     
