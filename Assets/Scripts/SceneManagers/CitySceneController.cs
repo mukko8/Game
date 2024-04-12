@@ -5,25 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class CitySceneController : MonoBehaviour
 {
+    public Transform parent;
 
     void Start()
     {
-
+        //Invoke("ChangeScene",2.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        Collider[] colls = Physics.OverlapSphere(new Vector3(0,0,0),300);
-        foreach(Collider coll in colls)
+        List<Transform> children = new List<Transform>();
+        for (int i = 0; i < parent.childCount; i++)
         {
-            if(coll.tag == "Enemy")
-            {
-                Debug.Log("Enemy is Coming");
-            }
+            children.Add(parent.GetChild(i));
         }
-        */
+
+        if (children.Count <= 0)
+        {
+            ChangeScene();
+        }
+
     }
 
     void ChangeScene()
