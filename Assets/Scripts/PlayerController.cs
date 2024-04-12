@@ -15,11 +15,14 @@ public class PlayerController : MonoBehaviour
     public int playerHp;
     public BulletLuncher bl; 
     int weponIndex;
+    bool rug = true;
+    float rugTime;
    
     void Start()
     {
         controller = GetComponent<CharacterController>();
         weponIndex = 0;
+        rugTime = 0.5f;
         playerHp = 100;
     }
 
@@ -50,12 +53,27 @@ public class PlayerController : MonoBehaviour
         
         //持ち替え
         if(Input.GetMouseButtonDown(1)){
-            //weponIndex ++;
-            //weponIndex %=2;
+            weponIndex ++;
+            weponIndex %=3;
+
         }
         //攻撃
-        if(Input.GetMouseButtonDown(0)){
-           bl.BulletShot(weponIndex); 
+        if(Input.GetMouseButton(0) && rug==true){
+          bl.BulletShot(weponIndex); 
+          //発射間隔設定
+          rug = false;
+          switch(weponIndex){
+            case 0:
+                rugTime = 0.35f;
+            break;
+            case 1:
+                rugTime = 0.9f;
+            break;
+            case 2:
+                rugTime = 0.15f;
+            break;
+            }
+            Invoke("Timer",rugTime);
         }
         //被弾
         if(playerHp <=0){
@@ -67,5 +85,10 @@ public class PlayerController : MonoBehaviour
         controller.Move(globalDirection*Time.deltaTime);
 
         if(controller.isGrounded) moveDirection.y = 0;
+
+        
+    }
+    void Timer(){
+        rug =true;
     }
 }

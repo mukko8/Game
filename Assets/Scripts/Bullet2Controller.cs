@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Bullet2Controller : MonoBehaviour
 {
-    public float bulletSpeed = 50.0f;
-    public float bulletDamage = 3;
-    public GameObject bullet;
+    public float bulletSpeed = 40.0f;
+    public float bulletDamage = 2;
+   
     public GameObject HitEffect;
     public Enemy1Controller en1;
+
     Ray ray;
-    
     RaycastHit hit;
-    // Start is called before the first frame update
-    void Start()
+
+    public void Start()
     {
-    //画面の中心に向かってraycastを飛ばす
+        //画面の中心に向かってraycastを飛ばす
         ray = Camera.main.ScreenPointToRay(
             Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
         );
@@ -24,25 +24,31 @@ public class Bullet2Controller : MonoBehaviour
         if(Physics.Raycast(ray,out hit, 100f) &&hit.distance>=5.0f) {
             ofset.y =3.1f/hit.distance + Camera.main.transform.forward.y/3.0f;
         }
-        
-        Instantiate(bullet,transform.position,Quaternion.identity);
+        ofset.x += 0.06f * Random.Range(-3, 4);
+        ofset.y += 0.06f * Random.Range(-3, 4);
+        ofset.z += 0.06f * Random.Range(-3, 4);
         //bulletを飛ばす
-        bullet.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
+        gameObject.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
         
         //Debug.Log(hit.distance);
-        Destroy(bullet,0.5f);
-    }
+        Destroy(gameObject,0.8f);
+    }    
 
-    private void OnCollisionEnter(Collision other) {
+     private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.CompareTag("bullet")){
+            return;
+        }
         if(other.gameObject.CompareTag("Enemy")){
             //other.gameObject.enemyHP =0;
-            other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
+           /* other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
             if(other.gameObject.GetComponent<Enemy1Controller>().enemyHP<=0){
                 Destroy(other.gameObject);
-            }
+            }*/
         }
-        Destroy(bullet);
+        Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
         Destroy(HitEffect,0.5f);
+    
     }
+
 }

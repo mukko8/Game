@@ -6,15 +6,14 @@ public class BulletController : MonoBehaviour
 {
     public float bulletSpeed = 40.0f;
     public float bulletDamage = 10;
-    public GameObject bullet;
+   
     public GameObject HitEffect;
     public Enemy1Controller en1;
 
-    GameObject bl;
     Ray ray;
     RaycastHit hit;
 
-    public void Shot()
+    public void Start()
     {
         //画面の中心に向かってraycastを飛ばす
         ray = Camera.main.ScreenPointToRay(
@@ -25,26 +24,25 @@ public class BulletController : MonoBehaviour
         if(Physics.Raycast(ray,out hit, 100f) &&hit.distance>=5.0f) {
             ofset.y =3.1f/hit.distance + Camera.main.transform.forward.y/3.0f;
         }
-        //bulletを生成して飛ばす
-        bl = Instantiate(bullet,transform.position,Quaternion.identity);
-        bl.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
+        //bulletを飛ばす
+        gameObject.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
         
         //Debug.Log(hit.distance);
-        Destroy(bl,1.0f);
-    }
+        Destroy(gameObject,1.0f);
+    }    
 
-    private void OnCollisionEnter(Collision other) {
+     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Enemy")){
             //other.gameObject.enemyHP =0;
-            other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
+           /* other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
             if(other.gameObject.GetComponent<Enemy1Controller>().enemyHP<=0){
                 Destroy(other.gameObject);
-            }
+            }*/
         }
-        Destroy(bl);
+        Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
         Destroy(HitEffect,0.5f);
+    
     }
-
 
 }
