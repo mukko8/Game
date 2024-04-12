@@ -44,6 +44,7 @@ public class Bullet2Controller : MonoBehaviour
             if(other.gameObject.GetComponent<Enemy1Controller>().enemyHP<=0){
                 Destroy(other.gameObject);
             }*/
+            Destroy(other.gameObject);
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
