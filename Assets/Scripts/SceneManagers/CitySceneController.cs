@@ -5,16 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class CitySceneController : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
-        Invoke("ChangeScene",2.0f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*
+        Collider[] colls = Physics.OverlapSphere(new Vector3(0,0,0),300);
+        foreach(Collider coll in colls)
+        {
+            if(coll.tag == "Enemy")
+            {
+                Debug.Log("Enemy is Coming");
+            }
+        }
+        */
     }
 
     void ChangeScene()
