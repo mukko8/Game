@@ -34,10 +34,10 @@ public class Enemy1Controller : MonoBehaviour
                 Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
                 //プレイヤーの方向に滑らかに回転
                 transform.rotation=Quaternion.Slerp(
-                transform.rotation,
-                targetRotation,
-                Time.deltaTime*rotationSpeed
-                );
+                    transform.rotation,
+                    targetRotation,
+                    Time.deltaTime*rotationSpeed
+                    );
                 //プレイヤーの位置を目的地に設定
                 nav.SetDestination(player.position);
                 //追跡再開
