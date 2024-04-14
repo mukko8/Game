@@ -47,13 +47,13 @@ public class Enemy2Controller : MonoBehaviour
             //最初のcanonballが出ていないか&待機時間達したか確認
             if(!firstCanonball&&delayTimer>=canonballDelay){
                 //最初のcanonballを出現させる
-                GameObject canon=Instantiate(
+                canonball=Instantiate(
                     canonball,
                     transform.position,
                     Quaternion.identity
                     );
                 firstCanonball=true;//最初のcanonballが出現したこと
-                firstCanonball=true;CanonballController cc=canon.GetComponent<CanonballController>();
+                CanonballController cc=canonball.GetComponent<CanonballController>();
                 AttackController ac=GameObject.FindObjectOfType<AttackController>();
                 cc.ac=ac;
             }

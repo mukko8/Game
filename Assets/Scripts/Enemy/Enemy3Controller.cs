@@ -62,6 +62,9 @@ public class Enemy3Controller : MonoBehaviour
                         transform.position,
                         Quaternion.identity
                         );
+                        CanonballController cc=canonball.GetComponent<CanonballController>();
+                        AttackController ac=GameObject.FindObjectOfType<AttackController>();
+                        cc.ac=ac;
                     }
                 }else{
                     //追跡再開

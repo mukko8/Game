@@ -19,7 +19,7 @@ public class CanonballController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0,0,0.15f);//発射スピード
+        transform.Translate(0,0,0.05f);//発射スピード
         Destroy(gameObject,3f);
     }
     void OnTriggerEnter(Collider other){
