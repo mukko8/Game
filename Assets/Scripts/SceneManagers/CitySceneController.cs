@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CitySceneController : MonoBehaviour
 {
     public Transform parent;
-    public PlayerHpBar playerHpBar;
+    public AttackController attackControlelr;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class CitySceneController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         List<Transform> children = new List<Transform>();
         for (int i = 0; i < parent.childCount; i++)
@@ -26,7 +26,7 @@ public class CitySceneController : MonoBehaviour
         {
             ChangeScene();
         }
-        else if (playerHpBar.currentHp <= 0)
+        else if (attackControlelr.playerHp<= 0)
         {
             LoseScene();
         }

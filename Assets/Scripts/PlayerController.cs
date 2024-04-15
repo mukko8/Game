@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         weponIndex = 0;
         rugTime = 0.5f;
-        playerHp = 100;
+        //playerHp = 100;
     }
 
     // Update is called once per frame

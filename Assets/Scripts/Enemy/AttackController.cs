@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +9,25 @@ public class AttackController : MonoBehaviour
     public int enemyHP;//現在のHP
     public int damage=10;//与えるダメージ
     public float attackInterval = 20; // 攻撃間隔
-    private GameObject player; // GameObject "player" を定義
-    private void OnTriggerEnter(Collider other){
-        int pc = other.GetComponent<PlayerController>().playerHp;
-        if (other.gameObject.CompareTag("Player")&&pc!=0)//enemyHPはplayer側の変数に変更
+    public GameObject player; // GameObject "player" を定義
+    public PlayerController playerController;
+    public float playerHp;
+    private float timer;
+    void OnTriggerStay(Collider other){
+        if (other.gameObject.CompareTag("Player")&&playerHp!=0)//enemyHPはplayer側の変数に変更
         {
-            if (Time.frameCount % attackInterval == 0){
+            Debug.Log("第１のif文");
+            timer += Time.deltaTime*10;
+            Debug.Log(timer);
+            if (timer >= attackInterval){
+                timer = 0;
+                Debug.Log("第２のif文");
                 //animator.SetTrigger("attack");
                 //Debug.Log("攻撃");
-                pc-=damage;//HPを減らす　//enemyHPはplayer側の変数に変更
-                if(pc<=0){
+                playerHp-=damage;//HPを減らす　//enemyHPはplayer側の変数に変更
+                Debug.Log("ダメージを受けたpcのHp"+playerHp);
+                if(playerHp<=0){
+                    Debug.Log("第３のif文");
                     Destroy(other.gameObject);
                 }
             }
@@ -27,6 +37,7 @@ public class AttackController : MonoBehaviour
     void Start()
     {
         enemyHP=maxHP;//初期HPを最大HPに設定
+        playerHp = player.GetComponent<PlayerController>().playerHp;
     }
 
     // Update is called once per frame
