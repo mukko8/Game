@@ -5,28 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class CitySceneController : MonoBehaviour
 {
-    public Transform parent;
-    public AttackController attackControlelr;
+    [SerializeField] Transform enemies;
+    [SerializeField] PlayerController pc;
 
-    void Start()
-    {
-        //Invoke("ChangeScene",2.0f);
-    }
-
-    // Update is called once per frame
     void LateUpdate()
     {
         List<Transform> children = new List<Transform>();
-        for (int i = 0; i < parent.childCount; i++)
+        for (int i = 0; i < enemies.childCount; i++)
         {
-            children.Add(parent.GetChild(i));
+            children.Add(enemies.GetChild(i));
         }
 
         if (children.Count <= 0)
         {
             ChangeScene();
         }
-        else if (attackControlelr.playerHp<= 0)
+        else if (pc.PlayerHp <= 0)
         {
             LoseScene();
         }

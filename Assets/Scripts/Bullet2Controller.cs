@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Bullet2Controller : MonoBehaviour
 {
-    public float bulletSpeed = 40.0f;
-    public float bulletDamage = 2;
-   
-    public GameObject HitEffect;
-    public Enemy1Controller en1;
+    [SerializeField] float bulletSpeed = 40.0f;
+    [SerializeField] float bulletDamage = 2;
+    [SerializeField] GameObject HitEffect;
+    private EnemyStatus es;
 
     AudioSource audioSource;
 
@@ -32,25 +31,22 @@ public class Bullet2Controller : MonoBehaviour
         //bulletを飛ばす
         gameObject.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
 
-        //AudioSourceの再生
-        audioSource = GetComponent<AudioSource>();
-        audioSource.Play();
-        
         //Debug.Log(hit.distance);
         Destroy(gameObject,0.8f);
     }    
 
-     private void OnCollisionEnter(Collision other) {
+     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("bullet")){
             return;
         }
         if(other.gameObject.CompareTag("Enemy")){
+            es = other.GetComponent<EnemyStatus>();
+            es.Damage(bulletDamage);
             //other.gameObject.enemyHP =0;
            /* other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
             if(other.gameObject.GetComponent<Enemy1Controller>().enemyHP<=0){
                 Destroy(other.gameObject);
             }*/
-            Destroy(other.gameObject);
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);

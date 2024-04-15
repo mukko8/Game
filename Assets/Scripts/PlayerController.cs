@@ -8,11 +8,20 @@ public class PlayerController : MonoBehaviour
     //移動量初期化
     Vector3 moveDirection = Vector3.zero;
 
-    public float gravity;
-    public float speed;
-    public float speedJump;
-    public float rotateSpeed;
-    public int playerHp;
+    [SerializeField] float gravity;
+
+    [SerializeField] float speed;
+
+    [SerializeField] float speedJump;
+
+    [SerializeField] float rotateSpeed;
+
+    [SerializeField] float playerHp;
+    public float PlayerHp{get {return playerHp;}}
+
+    private float currentSpeed;
+
+
     public BulletLuncher bl; 
     int weponIndex;
     bool rug = true;
@@ -29,7 +38,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentSpeed = speed;
+        currentSpeed = speed;
                  
         if(controller.isGrounded){     
             //ジャンプ
@@ -90,5 +99,10 @@ public class PlayerController : MonoBehaviour
     }
     void Timer(){
         rug =true;
+    }
+
+    public void Damege(float value)
+    {
+        playerHp -= value;
     }
 }

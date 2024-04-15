@@ -21,7 +21,7 @@ public class CanonballController : MonoBehaviour
         transform.Translate(0,0,0.05f);//発射スピード
         Destroy(gameObject,3f);
     }
-    void OnTriggerEnter(Collider other){
+    /*void OnTriggerEnter(Collider other){
         int pc = other.GetComponent<PlayerController>().playerHp;
         if (other.gameObject.CompareTag("Player")){
             //Debug.Log("射撃");
@@ -32,5 +32,6 @@ public class CanonballController : MonoBehaviour
         }
         Destroy(gameObject);
     }
+    */
 
 }

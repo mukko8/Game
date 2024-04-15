@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BulletLuncher : MonoBehaviour
 {
-    public GameObject b1;
-    public GameObject b2;
-    public GameObject b3;
+    [SerializeField] GameObject b1;
+    [SerializeField] GameObject b2;
+    [SerializeField] GameObject b3;
 
     public void BulletShot(int weponIndex){
         switch(weponIndex){

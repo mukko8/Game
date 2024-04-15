@@ -23660,6 +23660,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 551083202}
     m_Modifications:
     - target: {fileID: 3611813207744681317, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
+      propertyPath: pc
+      value: 
+      objectReference: {fileID: 1953850055}
+    - target: {fileID: 3611813207744681317, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
       propertyPath: playerHp
       value: 150
       objectReference: {fileID: 0}
@@ -23707,6 +23711,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8275763242830102030, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 33805089}
     - target: {fileID: 8468896837867747392, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
       propertyPath: m_Name
       value: Enemy1
@@ -36486,8 +36494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4af9ca9c9143a445bd1bd688cf25829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 551083202}
-  attackController: {fileID: 624111401}
+  enemies: {fileID: 551083202}
+  pc: {fileID: 1953850055}
 --- !u!43 &1977145103
 Mesh:
   m_ObjectHideFlags: 0
