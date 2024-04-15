@@ -6,7 +6,7 @@ public class CanonballController : MonoBehaviour
 {
     private GameObject player;
     public AttackController ac;
-    float canonDamage;
+    int canonDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +23,14 @@ public class CanonballController : MonoBehaviour
         Destroy(gameObject,3f);
     }
     void OnTriggerEnter(Collider other){
+        int pc = GetComponent<PlayerController>().playerHp;
         if (other.gameObject.CompareTag("Player")){
-            Debug.Log("射撃");
+            //Debug.Log("射撃");
             canonDamage=ac.damage;
-            ac.TakeDamage(canonDamage);
+            pc-=canonDamage;//HPを減らす　//enemyHPはplayer側の変数に変更
+            if(pc<=0){
+                Destroy(other.gameObject);
+            }
         }
         Destroy(gameObject);
     }
