@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CitySceneController : MonoBehaviour
 {
     public Transform parent;
+    public PlayerHpBar playerHpBar;
 
     void Start()
     {
@@ -25,12 +26,21 @@ public class CitySceneController : MonoBehaviour
         {
             ChangeScene();
         }
+        else if (playerHpBar.currentHp <= 0)
+        {
+            LoseScene();
+        }
 
     }
 
     void ChangeScene()
     {
         SceneManager.LoadSceneAsync("Mountain");
+    }
+
+    void LoseScene()
+    {
+        SceneManager.LoadSceneAsync("LoseScene");
     }
 
 }
