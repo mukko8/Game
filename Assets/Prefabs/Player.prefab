@@ -119,7 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10b07813b50da44db736de21fc4833c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 7079701135755621135, guid: b37c12aae416bca4d928106b1ea827c6, type: 3}
+  b1: {fileID: 7079701135755621135, guid: b37c12aae416bca4d928106b1ea827c6, type: 3}
+  b2: {fileID: 7179725791772995981, guid: 710d676f89f39ca4dbdcd860464df1b8, type: 3}
+  b3: {fileID: 7964137118168923972, guid: b9d6f22080e60954dac0ac356dd3378b, type: 3}
 --- !u!1 &6730113211135433786
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +137,7 @@ GameObject:
   - component: {fileID: 7382853751509684696}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,9 +248,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 12
-  speed: 5
+  speed: 10
   speedJump: 7
   rotateSpeed: 6
+  playerHp: 100
   bl: {fileID: 5395999383156072971}
 --- !u!1 &7960312151596109909
 GameObject:
