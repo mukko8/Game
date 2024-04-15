@@ -11,7 +11,7 @@ public class AttackController : MonoBehaviour
     public float attackInterval = 20; // 攻撃間隔
     public GameObject player; // GameObject "player" を定義
     public PlayerController playerController;
-    public float playerHp;
+    public float playerHp = 150;
     private float timer;
     void OnTriggerStay(Collider other){
         if (other.gameObject.CompareTag("Player")&&playerHp!=0)//enemyHPはplayer側の変数に変更
