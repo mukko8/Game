@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CanonballController : MonoBehaviour
 {
     private GameObject player;
-    public AttackController ac;
-    int canonDamage;
+    public int canonDamage=10;
 
     // Start is called before the first frame update
     void Start()
     {
         player=GameObject.FindWithTag("Player");
         transform.LookAt(player.transform); //プレイヤーの方を向く
-        this.ac = GetComponent<AttackController>();
     }
 
     // Update is called once per frame
@@ -23,10 +22,9 @@ public class CanonballController : MonoBehaviour
         Destroy(gameObject,3f);
     }
     void OnTriggerEnter(Collider other){
-        int pc = GetComponent<PlayerController>().playerHp;
+        int pc = other.GetComponent<PlayerController>().playerHp;
         if (other.gameObject.CompareTag("Player")){
             //Debug.Log("射撃");
-            canonDamage=ac.damage;
             pc-=canonDamage;//HPを減らす　//enemyHPはplayer側の変数に変更
             if(pc<=0){
                 Destroy(other.gameObject);

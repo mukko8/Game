@@ -53,9 +53,10 @@ public class Enemy2Controller : MonoBehaviour
                     Quaternion.identity
                     );
                 firstCanonball=true;//最初のcanonballが出現したこと
-                CanonballController cc=canonball.GetComponent<CanonballController>();
+                /*CanonballController cc=canonball.GetComponent<CanonballController>();
                 AttackController ac=GameObject.FindObjectOfType<AttackController>();
                 cc.ac=ac;
+                */
             }
                 //連射間隔
                 if(count%ballSpeed==0){

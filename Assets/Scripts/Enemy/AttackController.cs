@@ -8,8 +8,9 @@ public class AttackController : MonoBehaviour
     public int enemyHP;//現在のHP
     public int damage=10;//与えるダメージ
     public float attackInterval = 20; // 攻撃間隔
+    private GameObject player; // GameObject "player" を定義
     private void OnTriggerEnter(Collider other){
-        int pc = GetComponent<PlayerController>().playerHp;
+        int pc = other.GetComponent<PlayerController>().playerHp;
         if (other.gameObject.CompareTag("Player")&&pc!=0)//enemyHPはplayer側の変数に変更
         {
             if (Time.frameCount % attackInterval == 0){
