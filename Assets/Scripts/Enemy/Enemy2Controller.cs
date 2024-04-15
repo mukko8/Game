@@ -47,12 +47,15 @@ public class Enemy2Controller : MonoBehaviour
             //最初のcanonballが出ていないか&待機時間達したか確認
             if(!firstCanonball&&delayTimer>=canonballDelay){
                 //最初のcanonballを出現させる
-                Instantiate(
+                canonball=Instantiate(
                     canonball,
                     transform.position,
                     Quaternion.identity
                     );
-                    firstCanonball=true;//最初のcanonballが出現したこと
+                firstCanonball=true;//最初のcanonballが出現したこと
+                CanonballController cc=canonball.GetComponent<CanonballController>();
+                AttackController ac=GameObject.FindObjectOfType<AttackController>();
+                cc.ac=ac;
             }
                 //連射間隔
                 if(count%ballSpeed==0){
@@ -62,6 +65,7 @@ public class Enemy2Controller : MonoBehaviour
                     transform.position,
                     Quaternion.identity
                     );
+                
             }
             //タイマーをリセット
             delayTimer=0f;
@@ -75,11 +79,6 @@ public class Enemy2Controller : MonoBehaviour
             transform.position,
             Quaternion.identity
         );
-        firstCanonball=true;
-    }
-    void OnCollisionStay(Collision other) {
-        if(other.gameObject.CompareTag("Player")){
-            //animator.SetTrigger("attack");           
-        }
+        
     }
 }

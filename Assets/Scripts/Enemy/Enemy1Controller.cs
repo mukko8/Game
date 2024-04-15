@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy4Controller : MonoBehaviour
+public class Enemy1Controller : MonoBehaviour
 {
-    public Transform player; 
+    public Transform player;
     //索敵範囲
     public float traceDist =15.0f;
-    public float damage=5.0f;//攻撃ダメージ
-    float rotationSpeed=10f;//方向回転スピード
+    float rotationSpeed=10.0f;//方向回転スピード
     NavMeshAgent nav;
     Animator animator;
 
@@ -34,10 +34,10 @@ public class Enemy4Controller : MonoBehaviour
                 Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
                 //プレイヤーの方向に滑らかに回転
                 transform.rotation=Quaternion.Slerp(
-                transform.rotation,
-                targetRotation,
-                Time.deltaTime*rotationSpeed
-            );
+                    transform.rotation,
+                    targetRotation,
+                    Time.deltaTime*rotationSpeed
+                    );
                 //プレイヤーの位置を目的地に設定
                 nav.SetDestination(player.position);
                 //追跡再開
@@ -49,16 +49,7 @@ public class Enemy4Controller : MonoBehaviour
                 nav.isStopped=true;
             }
         }
-    }
-    void OnTriggerStay(Collider other)
-    {
-    // ぶつかった相手に「Player」というタグがついていたら
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("4の攻撃");
-            // 敵のHPをプレイヤーのatk分、減少させる
-            //enemyHP -= playerstates.atk;
-        }
-    
+        
     }
 }
+
