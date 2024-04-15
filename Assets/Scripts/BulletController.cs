@@ -10,6 +10,8 @@ public class BulletController : MonoBehaviour
     public GameObject HitEffect;
     public Enemy1Controller en1;
 
+    AudioSource audioSource;
+
     Ray ray;
     RaycastHit hit;
 
@@ -26,6 +28,10 @@ public class BulletController : MonoBehaviour
         }
         //bulletを飛ばす
         gameObject.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
+
+        //AudioSource再生
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         
         //Debug.Log(hit.distance);
         Destroy(gameObject,1.0f);

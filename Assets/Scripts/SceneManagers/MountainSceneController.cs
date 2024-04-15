@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MountainSceneController : MonoBehaviour
 {
     public Transform parent;
+    public PlayerHpBar playerHpBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +26,20 @@ public class MountainSceneController : MonoBehaviour
         {
             ChangeScene();
         }
+        else if (playerHpBar.currentHp <= 0)
+        {
+            LoseScene();
+        }
     }
 
     void ChangeScene()
     {
         SceneManager.LoadSceneAsync("Cave");
+    }
+    
+    void LoseScene()
+    {
+        SceneManager.LoadSceneAsync("LoseScene");
     }
 
 }
