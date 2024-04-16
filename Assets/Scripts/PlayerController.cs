@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,19 +22,25 @@ public class PlayerController : MonoBehaviour
     public float PlayerHp{get {return playerHp;}}
 
     private float currentSpeed;
-
+    //[SerializeField] Transform cam;
+    public Image img;
+    
 
     public BulletLuncher bl; 
     int weponIndex;
     bool rug = true;
     float rugTime;
+    float nowHp => playerHp;//getterのこと
+    float preHp;
    
     void Start()
     {
         controller = GetComponent<CharacterController>();
         weponIndex = 0;
         rugTime = 0.5f;
-        //playerHp = 100;
+
+        img.color = Color.clear;
+        preHp = nowHp;
     }
 
     // Update is called once per frame
@@ -84,9 +92,19 @@ public class PlayerController : MonoBehaviour
             }
             Invoke("Timer",rugTime);
         }
-        //被弾
+
+        //被弾時画面を赤くする
+        if(nowHp < preHp){
+            img.color = new Color(0.5f, 0f, 0f, 0.7f);
+            preHp = nowHp;
+            //cam.DOComplete();
+            //gameObject.transform.DOShakePosition(0.3f,1);
+            //cam.DOShakeRotation(0.3f, rotationStrength);
+        }
+        img.color = Color.Lerp(img.color, Color.clear, Time.deltaTime*1.5f);
         if(playerHp <=0){
             Destroy(gameObject);
+            
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
