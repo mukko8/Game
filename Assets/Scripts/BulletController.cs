@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour
     [SerializeField] float bulletDamage = 10;
     [SerializeField] GameObject HitEffect;
     private EnemyStatus es;
-
+    
     Ray ray;
     RaycastHit hit;
 
