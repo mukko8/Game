@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CitySceneController : MonoBehaviour
 {
     [SerializeField] Transform enemies;
     [SerializeField] PlayerController pc;
+    [SerializeField] GameObject clearText;
+
+    void Start()
+    {
+        clearText.SetActive(false);
+    }
 
     void LateUpdate()
     {
@@ -18,16 +25,16 @@ public class CitySceneController : MonoBehaviour
 
         if (children.Count <= 0)
         {
-            ChangeScene();
+            pc.enabled = false;
+            clearText.SetActive(true);
         }
         else if (pc.PlayerHp <= 0)
         {
             LoseScene();
         }
-
     }
 
-    void ChangeScene()
+    public void ChangeScene()
     {
         SceneManager.LoadSceneAsync("Mountain");
     }

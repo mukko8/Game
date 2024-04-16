@@ -5,36 +5,16 @@ using UnityEngine;
 public class AudioSourceController : MonoBehaviour
 {
     [SerializeField] AudioSource[] audioSources;
-    private int index;
+    private AudioSource audioSource;
+
 
     void Start()
     {
-        audioSources = GetComponent<AudioSource[]>();
+        audioSource = GetComponent<AudioSource>();
     }
 
-    void LateUpdate()
+    public void PlayAudio(int index)
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            index++;
-            index %= 3;
-        }
-
-        if (Input.GetMouseButton(0))
-        {
-            switch (index)
-            {
-                case 0:
-                    audioSources[0].Play();
-                    break;
-                case 1:
-                    audioSources[1].Play();
-                    break;
-                case 2:
-                    audioSources[0].Play();
-                    break;
-
-            }
-        }
+        audioSource.PlayOneShot(audioSources[index].clip);
     }
 }
