@@ -12,7 +12,7 @@ public class S1EnemyGenerator : MonoBehaviour
     public float span=2.0f;
     float delta=0;
     public float dist=20f;//敵が生成されるプレイヤーからの距離
-    public float EnemySum=100f;//出現する敵の数
+    public int EnemySum=100;//出現する敵の数
 
     // Start is called before the first frame update
     void Start()
