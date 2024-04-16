@@ -7,9 +7,14 @@ public class CaveSceneController : MonoBehaviour
 {
     [SerializeField] Transform enemies;
     [SerializeField] PlayerController pc;
+    [SerializeField] GameObject clearText;
 
+    void Start()
+    {
+        clearText.SetActive(false);
+    }
 
-    void Update()
+    void LateUpdate()
     {
         List<Transform> children = new List<Transform>();
         for (int i = 0; i < enemies.childCount; i++)
@@ -19,7 +24,8 @@ public class CaveSceneController : MonoBehaviour
 
         if (children.Count <= 0)
         {
-            ChangeScene();
+            pc.enabled = false;
+            clearText.SetActive(true);
         }
         else if(pc.PlayerHp<= 0)
         {
@@ -27,7 +33,7 @@ public class CaveSceneController : MonoBehaviour
         }
     }
 
-    void ChangeScene()
+    public void ChangeScene()
     {
         SceneManager.LoadScene("ClearScene");
     }

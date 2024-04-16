@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MountainSceneController : MonoBehaviour
 {
     [SerializeField] Transform enemies;
     [SerializeField] PlayerController pc;
+    [SerializeField] GameObject clearText;
 
-    void Update()
+    void Start()
+    {
+        clearText.SetActive(false);
+    }
+
+    void LateUpdate()
     {
         List<Transform> children = new List<Transform>();
         for (int i = 0; i < enemies.childCount; i++)
@@ -18,7 +25,8 @@ public class MountainSceneController : MonoBehaviour
 
         if (children.Count <= 0)
         {
-            ChangeScene();
+            pc.enabled = false;
+            clearText.SetActive(true);
         }
         else if (pc.PlayerHp <= 0)
         {
@@ -26,7 +34,7 @@ public class MountainSceneController : MonoBehaviour
         }
     }
 
-    void ChangeScene()
+    public void ChangeScene()
     {
         SceneManager.LoadSceneAsync("Cave");
     }

@@ -23,6 +23,4 @@ public class BulletLuncher : MonoBehaviour
                 break;
         }
     }     
-    
-
 }
