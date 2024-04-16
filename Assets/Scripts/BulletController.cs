@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public float bulletSpeed = 40.0f;
-    public float attack = 7;
-    public GameObject HitEffect;
-    public Enemy1Controller en1;
+    [SerializeField] float bulletSpeed = 40;
+    [SerializeField] float bulletDamage = 10;
+    [SerializeField] GameObject HitEffect;
+    private EnemyStatus es;
+
     Ray ray;
-    
     RaycastHit hit;
-    // Start is called before the first frame update
-    void Start()
+
+    public void Start()
     {
-    //画面の中心に向かってraycastを飛ばす
+        //画面の中心に向かってraycastを飛ばす
         ray = Camera.main.ScreenPointToRay(
             Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
         );
@@ -24,24 +24,26 @@ public class BulletController : MonoBehaviour
             ofset.y =3.1f/hit.distance + Camera.main.transform.forward.y/3.0f;
         }
         //bulletを飛ばす
-        GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
-        
+        gameObject.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
+
         //Debug.Log(hit.distance);
         Destroy(gameObject,1.0f);
-    }
+    }    
 
-    private void OnCollisionEnter(Collision other) {
+     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Enemy")){
+            es = other.GetComponent<EnemyStatus>();
+            es.Damage(bulletDamage);
             //other.gameObject.enemyHP =0;
-            other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= attack;
+           /* other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
             if(other.gameObject.GetComponent<Enemy1Controller>().enemyHP<=0){
                 Destroy(other.gameObject);
-            }
+            }*/
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
         Destroy(HitEffect,0.5f);
+    
     }
-
 
 }

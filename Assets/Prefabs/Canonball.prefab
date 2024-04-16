@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3120072955915243394}
   - component: {fileID: 4537028149847075850}
   - component: {fileID: 2979565476555443253}
-  - component: {fileID: 2173397896088906384}
+  - component: {fileID: 4715045231449170307}
   m_Layer: 0
   m_Name: Canonball
-  m_TagString: Untagged
+  m_TagString: Canonball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,13 +100,13 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2173397896088906384
+--- !u!114 &4715045231449170307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
