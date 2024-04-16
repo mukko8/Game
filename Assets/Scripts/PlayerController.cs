@@ -60,13 +60,13 @@ public class PlayerController : MonoBehaviour
         moveDirection.z = Input.GetAxis("Vertical") * currentSpeed;       
         moveDirection.x = Input.GetAxis("Horizontal") * currentSpeed;
         
-        //持ち替え
+        //右クリックで武器の持ち替え
         if(Input.GetMouseButtonDown(1)){
             weponIndex ++;
             weponIndex %=3;
 
         }
-        //攻撃
+        //左クリックで攻撃
         if(Input.GetMouseButton(0) && rug==true){
           bl.BulletShot(weponIndex); 
           //発射間隔設定
