@@ -14,6 +14,39 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-4967560077574902274
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GunActiron
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: bb0c614e4b2c9a04bb59a62239962d92
+  m_Children: []
+  m_Volume: dc606796048e2334ca8daf163477c89f
+  m_Pitch: cc4ff29db805a8b47a5404a3fd8f9878
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -1100375426196690423}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-1100375426196690423
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: dc3921d492317a24488801e5d7087208
+  m_EffectName: Attenuation
+  m_MixLevel: cd13428d8c8462547bd4b912ec6a49c9
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -34,6 +67,7 @@ AudioMixerController:
   - guids:
     - 89e03167de7eabc43962cfc8ca9880d1
     - 941adca0e41310744bb57039c858992d
+    - bb0c614e4b2c9a04bb59a62239962d92
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -48,6 +82,7 @@ AudioMixerGroupController:
   m_GroupID: 89e03167de7eabc43962cfc8ca9880d1
   m_Children:
   - {fileID: 6292134079527617393}
+  - {fileID: -4967560077574902274}
   m_Volume: 67780d43d40663f4ba54501ce88e91f5
   m_Pitch: ecc80975f99d7e44e9f57020913d38f7
   m_Send: 00000000000000000000000000000000

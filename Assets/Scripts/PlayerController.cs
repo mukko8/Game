@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
         {
             weponIndex++;
             weponIndex %= 3;
+            asc.PlayAudio(weponIndex+3);
 
         }
         //攻撃
@@ -98,7 +99,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 2:
                     rugTime = 0.15f;
-                    asc.PlayAudio(0);
+                    asc.PlayAudio(2);
                     break;
             }
             Invoke("Timer", rugTime);
