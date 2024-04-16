@@ -24,7 +24,7 @@ public class Enemy1Controller : MonoBehaviour
         while (true)
         {
             //1秒間に5回距離を計測する。
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             //プレイヤーとの距離を計測
             float dist = Vector3.Distance(player.position, transform.position);
             //索敵範囲に入ったか？
