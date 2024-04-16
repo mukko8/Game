@@ -1,0 +1,143 @@
+* 9792942 [31m (origin/master, origin/HEAD, test, dev) [32m2024-04-11 [34mguniguni513 [mCity微調整
+* 1e3676e [31m [32m2024-04-11 [34mguniguni [mマップ作成終了
+* bdcbf95 [31m (HEAD -> master) [32m2024-04-11 [34mguniguni [mMountain暫定版
+*   60b8b45 [31m [32m2024-04-11 [34mguniguni [mMerge branch 'dev'
+[32m|[m[33m\[m  
+[32m|[m * b514450 [31m [32m2024-04-11 [34mguniguni [m仮
+* [33m|[m acd5a6b [31m [32m2024-04-11 [34msteel [mMerge remote-tracking branch 'muna/master' into dev
+[34m|[m[33m\[m[33m|[m 
+* [33m|[m d40e8d1 [31m [32m2024-04-11 [34msteel [mCanonball編集
+[35m|[m * 45f7c82 [31m [32m2024-04-11 [34mguniguni [mMountain編集中
+* [35m|[m a1b67d8 [31m [32m2024-04-11 [34msteel [mDamageController追加
+* [35m|[m 1336aba [31m [32m2024-04-11 [34msteel [mHpControllerに名前変更
+* [35m|[m 66e5227 [31m [32m2024-04-11 [34msteel [mEnemyにHpControllerアタッチ
+* [35m|[m 5be1c2c [31m [32m2024-04-11 [34msteel [mEnemyHpControllerに名前を変更
+* [35m|[m 3bbdf24 [31m [32m2024-04-11 [34msteel [mEnemyDamageController追加
+* [35m|[m   5551703 [31m [32m2024-04-11 [34msteel [mMerge remote-tracking branch 'muna/master' into dev
+[36m|[m[1;31m\[m [35m\[m  
+* [1;31m|[m [35m|[m a26077c [31m [32m2024-04-11 [34msteel [m仮
+[1;31m|[m [1;31m|[m * e82e9aa [31m [32m2024-04-11 [34mguniguni [mCave完成
+[1;31m|[m [1;31m|[m[1;31m/[m  
+* [1;31m|[m 52e8c7d [31m [32m2024-04-11 [34msteel [m仮
+[1;31m|[m * 7817365 [31m [32m2024-04-11 [34mguniguni [m4月11日、朝merge
+[1;31m|[m * 19eb073 [31m [32m2024-04-11 [34mguniguni [mコンフリクトしたが、tagu/dev2を採用
+[1;31m|[m[1;31m/[m[1;33m|[m 
+* [1;33m|[m   bb4aef6 [31m [32m2024-04-11 [34msteel [mMerge remote-tracking branch 'muna/master' into dev
+[1;34m|[m[1;35m\[m [1;33m\[m  
+[1;34m|[m * [1;33m|[m 0b4be10 [31m [32m2024-04-10 [34mguniguni513 [mCity,Collider付与完了
+[1;34m|[m * [1;33m|[m 2b3337b [31m [32m2024-04-10 [34mguniguni [mPrefabにColliderを付与
+* [1;35m|[m [1;33m|[m 80e8418 [31m [32m2024-04-10 [34msteel [m各hp追加,BOSSController修正
+[1;35m|[m * [1;33m|[m e2538e9 [31m [32m2024-04-10 [34mguniguni [mCityにColliderを試験的に付与
+[1;35m|[m [1;35m|[m * 8f9f567 [31m [32m2024-04-10 [34mttaguchi [m微修正
+* [1;35m|[m [1;35m|[m e06001f [31m [32m2024-04-10 [34msteel [minterface削除
+[1;35m|[m [1;35m|[m *   08855e0 [31m [32m2024-04-10 [34mttaguchi [mmerge完
+[1;35m|[m [1;35m|[m [1;36m|[m[1;35m\[m  
+[1;35m|[m [1;35m|[m [1;36m|[m[1;35m/[m  
+[1;35m|[m [1;35m|[m[1;35m/[m[1;36m|[m   
+[1;35m|[m [1;35m|[m * 741e99d [31m [32m2024-04-10 [34mttaguchi [mmerge完了
+[1;35m|[m * [31m|[m   83a550e [31m [32m2024-04-10 [34mguniguni [mMerge branch 'test' into dev
+[1;35m|[m [32m|[m[33m\[m [31m\[m  
+[1;35m|[m [32m|[m * [31m\[m   f9dd31e [31m [32m2024-04-10 [34mguniguni [mMerge remote-tracking branch 'matsu/dev' into test
+[1;35m|[m [32m|[m [34m|[m[1;35m\[m [31m\[m  
+[1;35m|[m [32m|[m[1;35m_[m[34m|[m[1;35m/[m [31m/[m  
+[1;35m|[m[1;35m/[m[32m|[m [34m|[m [31m|[m   
+[1;35m|[m [32m|[m * [31m|[m 9eb566e [31m [32m2024-04-10 [34mguniguni [m仮
+[1;35m|[m [32m|[m [36m|[m[31m\[m[31m|[m 
+* [32m|[m [36m|[m [31m|[m 540b15a [31m [32m2024-04-10 [34msteel [mscript削除
+* [32m|[m [36m|[m [31m|[m   962691f [31m [32m2024-04-10 [34msteel [mMerge remote-tracking branch 'muna/master' into dev
+[1;32m|[m[36m\[m [32m\[m [36m\[m [31m\[m  
+[1;32m|[m [36m|[m [32m|[m[36m/[m [31m/[m  
+[1;32m|[m [36m|[m[36m/[m[32m|[m [31m|[m   
+[1;32m|[m [36m|[m * [31m|[m 73f2548 [31m [32m2024-04-10 [34mguniguni [m仮
+[1;32m|[m [36m|[m[36m/[m [31m/[m  
+* [36m|[m [31m|[m 94a92e8 [31m [32m2024-04-10 [34msteel [mEnemy1interface追加
+[1;33m|[m * [31m|[m   0b9c41a [31m [32m2024-04-10 [34mguniguni [mjsonのコンフリクトが発生,masterを採用
+[1;33m|[m [1;34m|[m[1;35m\[m [31m\[m  
+[1;33m|[m [1;34m|[m * [31m|[m af83d9b [31m [32m2024-04-10 [34mguniguni [mCave暫定版
+* [1;34m|[m [1;35m|[m [31m|[m 37af7ea [31m [32m2024-04-10 [34msteel [mEnemy1速度,向き変更
+[1;35m|[m [1;34m|[m [1;35m|[m * 2c19a5d [31m [32m2024-04-10 [34mttaguchi [mBulletLuncher追加
+[1;35m|[m [1;34m|[m [1;35m|[m[1;35m/[m  
+* [1;34m|[m [1;35m|[m 80ee9cf [31m [32m2024-04-10 [34msteel [mBOSS追加
+* [1;34m|[m [1;35m|[m 39a24c2 [31m [32m2024-04-10 [34msteel [mダメージ値追加
+* [1;34m|[m [1;35m|[m   f693501 [31m [32m2024-04-10 [34msteel [mMerge remote-tracking branch 'muna/master' into dev
+[1;36m|[m[1;35m\[m [1;34m\[m [1;35m\[m  
+[1;36m|[m [1;35m|[m [1;34m|[m[1;35m/[m  
+[1;36m|[m [1;35m|[m[1;35m/[m[1;34m|[m   
+* [1;35m|[m [1;34m|[m c12ca52 [31m [32m2024-04-10 [34msteel [m仮
+[31m|[m * [1;34m|[m   b8e89fe [31m [32m2024-04-10 [34mguniguni [mMerge remote-tracking branch 'matsu/dev' into test
+[31m|[m [32m|[m[31m\[m [1;34m\[m  
+[31m|[m [32m|[m[31m/[m [1;34m/[m  
+[31m|[m[31m/[m[32m|[m [1;34m|[m   
+[31m|[m [32m|[m * 21fd816 [31m [32m2024-04-10 [34mguniguni [mCave微調整
+[31m|[m [32m|[m[32m/[m  
+* [32m|[m   54495b9 [31m [32m2024-04-10 [34msteel [mMerge remote-tracking branch 'muna/master' into dev
+[34m|[m[35m\[m [32m\[m  
+[34m|[m [35m|[m *   2b91328 [31m [32m2024-04-10 [34mguniguni [mMerge branch 'test'
+[34m|[m [35m|[m [36m|[m[1;31m\[m  
+[34m|[m [35m|[m [36m|[m * 10a7bf1 [31m [32m2024-04-10 [34mguniguni [m仮
+[34m|[m [35m|[m [36m|[m * dd60b0b [31m [32m2024-04-10 [34mguniguni [mMerge remote-tracking branch 'tagu/dev' into test
+[34m|[m [35m|[m [36m|[m[35m/[m[1;33m|[m 
+[34m|[m [35m|[m[35m/[m[36m|[m [1;33m|[m 
+[34m|[m [35m|[m * [1;33m|[m c3cb67e [31m [32m2024-04-10 [34mguniguni [mCave微調整
+[34m|[m [35m|[m[35m/[m [1;33m/[m  
+* [35m|[m [1;33m|[m d5e1ef8 [31m [32m2024-04-10 [34msteel [mEnemy1script編集
+[1;33m|[m * [1;33m|[m 09c873c [31m [32m2024-04-09 [34mguniguni [m仮
+[1;33m|[m * [1;33m|[m   fc67e7f [31m [32m2024-04-09 [34mguniguni [mMerge remote-tracking branch 'matsu/dev' into test
+[1;33m|[m [1;34m|[m[1;33m\[m [1;33m\[m  
+[1;33m|[m [1;34m|[m[1;33m/[m [1;33m/[m  
+[1;33m|[m[1;33m/[m[1;34m|[m [1;33m|[m   
+[1;33m|[m * [1;33m|[m 7c6db41 [31m [32m2024-04-09 [34mguniguni [mCave暫定版
+[1;33m|[m [1;35m|[m * 2d50f74 [31m [32m2024-04-09 [34mttaguchi [mbullet
+* [1;35m|[m [1;35m|[m 6f48f20 [31m [32m2024-04-09 [34msteel [m攻撃確認用Msg追加
+* [1;35m|[m [1;35m|[m b51a72c [31m [32m2024-04-09 [34msteel [mEnemy1,3速度変更
+* [1;35m|[m [1;35m|[m 2e6c4dc [31m [32m2024-04-09 [34msteel [mEnemy4追加
+* [1;35m|[m [1;35m|[m 8f0434b [31m [32m2024-04-09 [34msteel [mEnemy3追加&Enemy1速度調整
+[1;35m|[m * [1;35m|[m a76497f [31m [32m2024-04-09 [34mguniguni [m巨大縦穴作成
+[1;35m|[m [1;35m|[m * 408556f [31m [32m2024-04-09 [34mttaguchi [mダッシュ追加
+[1;35m|[m [1;35m|[m *   ec85f56 [31m [32m2024-04-09 [34mttaguchi [m4/9開始
+[1;35m|[m [1;35m|[m [1;36m|[m[1;35m\[m  
+[1;35m|[m [1;35m|[m [1;36m|[m[1;35m/[m  
+[1;35m|[m [1;35m|[m[1;35m/[m[1;36m|[m   
+[1;35m|[m [1;35m|[m * d6600b6 [31m [32m2024-04-09 [34mttaguchi [meffect
+[1;35m|[m * [31m|[m 60fbe2c [31m [32m2024-04-08 [34mguniguni [mCaveに必要なassetとProBuilderのインストール
+* [31m|[m [31m|[m 3699f95 [31m [32m2024-04-05 [34msteel [mEnemy2修正
+[31m|[m * [31m|[m 8bfbfc3 [31m [32m2024-04-05 [34mguniguni [mMountain暫定版
+[31m|[m * [31m|[m ffa44c4 [31m [32m2024-04-05 [34mguniguni [m山作成
+[31m|[m * [31m|[m   41502fc [31m [32m2024-04-05 [34mguniguni [mMerge branch 'master' into dev
+[31m|[m [32m|[m[31m\[m [31m\[m  
+[31m|[m [32m|[m[31m/[m [31m/[m  
+[31m|[m[31m/[m[32m|[m [31m|[m   
+[31m|[m * [31m|[m 29e7b35 [31m [32m2024-04-05 [34mguniguni [m仮
+* [33m|[m [31m|[m b90f6f4 [31m [32m2024-04-05 [34msteel [mscenestage,player配置
+[34m|[m[33m\[m[33m|[m [31m|[m 
+* [33m|[m [31m|[m 4901f66 [31m [32m2024-04-05 [34msteel [mEnemy2追加
+[35m|[m [33m|[m *   0772921 [31m [32m2024-04-05 [34mttaguchi [mCity変更
+[35m|[m [33m|[m [36m|[m[1;31m\[m  
+[35m|[m [33m|[m * [1;31m|[m eaa4ce7 [31m [32m2024-04-05 [34mttaguchi [ma
+* [33m|[m [1;31m|[m [1;31m|[m f6830a4 [31m [32m2024-04-05 [34msteel [mblack名前変更
+* [33m|[m [1;31m|[m [1;31m|[m 9c57277 [31m [32m2024-04-05 [34msteel [mEnemy追加
+[1;31m|[m * [1;31m|[m [1;31m|[m 472ba13 [31m [32m2024-04-05 [34mguniguni [mMerge remote-tracking branch 'tagu/dev' into test
+[1;31m|[m [1;32m|[m[1;31m\[m[1;31m|[m [1;31m|[m 
+[1;31m|[m * [1;31m|[m [1;31m|[m be10415 [31m [32m2024-04-05 [34mguniguni [m仮
+[1;31m|[m [1;33m|[m [1;31m|[m * 2aacf9d [31m [32m2024-04-05 [34mttaguchi [mMerge remote-tracking branch 'munakata/master' into test
+[1;31m|[m [1;33m|[m [1;31m|[m[1;31m/[m[1;33m|[m 
+[1;31m|[m [1;33m|[m [1;31m|[m[1;33m/[m  
+[1;31m|[m [1;33m|[m[1;33m/[m[1;31m|[m   
+[1;31m|[m [1;33m|[m * 8c054ce [31m [32m2024-04-05 [34mttaguchi [mplayercontrollerとcameracontroller作成
+[1;31m|[m * [1;35m|[m 74377f2 [31m [32m2024-04-05 [34mguniguni [mCity暫定版改良
+[1;31m|[m [1;35m|[m * 50508a2 [31m [32m2024-04-05 [34mttaguchi [mplayercontrollerとcameracontroller2
+[1;31m|[m * [1;35m|[m e9add40 [31m [32m2024-04-05 [34mguniguni [mCity暫定版
+[1;31m|[m [1;35m|[m * 62c9e00 [31m [32m2024-04-05 [34mttaguchi [mplayercontrollerとcameracontroller
+[1;31m|[m [1;35m|[m[1;35m/[m  
+* [1;35m/[m 16880d5 [31m [32m2024-04-04 [34msteel [mEnemy途中
+[1;35m|[m[1;35m/[m  
+* 0da1f40 [31m [32m2024-04-04 [34mguniguni [m初期化
+* e36534b [31m [32m2024-04-04 [34msteel [mPlane追加
+* 97497ae [31m [32m2024-04-04 [34mttaguchi [mcylinder追加
+* ba1f6c0 [31m [32m2024-04-04 [34msteel [mSphere追加
+*   64ec4b7 [31m [32m2024-04-04 [34mguniguni [mMerge remote-tracking branch 'tagu/dev'
+[1;36m|[m[31m\[m  
+* [31m|[m d71f270 [31m [32m2024-04-04 [34mguniguni [msettigs.json修正
+[31m|[m * 71b556b [31m [32m2024-04-04 [34mttaguchi [mcube追加
+[31m|[m[31m/[m  
+* ef51f26 [31m [32m2024-04-04 [34mguniguni [mfirst-commit

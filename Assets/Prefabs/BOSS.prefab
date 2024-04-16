@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1661892342618910274}
   - component: {fileID: 394994497442836019}
   - component: {fileID: 181460084364451088}
-  - component: {fileID: 3115531222840184079}
+  - component: {fileID: 2502265159557972083}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Enemy
@@ -143,12 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  canonball: {fileID: 6534579147005400926, guid: 499b5aaabad20da48a0141ca5f1df5af, type: 3}
-  ballSpeed: 4
   traceDist: 30
-  stopDist: 7
-  damage: 50
---- !u!114 &3115531222840184079
+--- !u!114 &2502265159557972083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,4 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9229848af2809c4e98795cfecf4727c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 500
+  maxHP: 100
+  enemyHP: 0
+  damage: 10
+  attackInterval: 20
