@@ -14,6 +14,7 @@ public class CitySceneController : MonoBehaviour
         for (int i = 0; i < enemies.childCount; i++)
         {
             children.Add(enemies.GetChild(i));
+            Debug.Log(children.Count);
         }
 
         if (children.Count <= 0)
