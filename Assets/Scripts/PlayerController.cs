@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float playerHp;
     public float PlayerHp { get { return playerHp; } }
 
+    [SerializeField] AudioSourceController asc;
+
     private float currentSpeed;
 
 
@@ -88,12 +90,15 @@ public class PlayerController : MonoBehaviour
             {
                 case 0:
                     rugTime = 0.35f;
+                    asc.PlayAudio(0);
                     break;
                 case 1:
                     rugTime = 0.9f;
+                    asc.PlayAudio(1);
                     break;
                 case 2:
                     rugTime = 0.15f;
+                    asc.PlayAudio(0);
                     break;
             }
             Invoke("Timer", rugTime);
