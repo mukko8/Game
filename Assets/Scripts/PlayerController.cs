@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float PlayerHp { get { return playerHp; } }
 
     [SerializeField] AudioSourceController asc;
+    [SerializeField] GameObject Defeat;
 
     private float currentSpeed;
 
@@ -53,8 +54,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentSpeed = speed;
-        
-        if(isAlive){
+        if(isAlive)
         if (controller.isGrounded)
         {
             //ジャンプ
@@ -113,14 +113,15 @@ public class PlayerController : MonoBehaviour
             Invoke("Timer", rugTime);
         }
 
-        }
         //ダメージエフェクトを徐々に消す
         DamageFlash.color = Color.Lerp(DamageFlash.color, Color.clear, Time.deltaTime);
         
+        //死亡時  
         if (playerHp <= 0)
         {
-            isAlive = false;
-            Destroy(gameObject);
+            Instantiate(Defeat, gameObject.transform.position, Quaternion.identity);
+            Destroy(Defeat,0.5f);
+            gameObject.SetActive (!gameObject.activeSelf);
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
