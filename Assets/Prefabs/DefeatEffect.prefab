@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8654949487485434762}
   - component: {fileID: 4436570194888946191}
   m_Layer: 0
-  m_Name: Defeat
+  m_Name: DefeatEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

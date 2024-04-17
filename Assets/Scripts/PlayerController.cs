@@ -19,9 +19,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float playerHp;
     public float PlayerHp { get { return playerHp; } }
+    [SerializeField] float exp;
+    public float PlayerExp { get { return exp; } }
 
     [SerializeField] AudioSourceController asc;
     [SerializeField] GameObject Defeat;
+    [SerializeField] GameObject OrbEffect;
+    
 
     private float currentSpeed;
 
@@ -47,6 +51,7 @@ public class PlayerController : MonoBehaviour
         rugTime = 0.5f;
         isAlive = true;
         DamageFlash.color = Color.clear;
+        exp =0;
         //playerHp = 100;
     }
 
@@ -136,6 +141,19 @@ public class PlayerController : MonoBehaviour
     {
         rug = true;
     }
-
+    //オーブ取得
+    private void OnControllerColliderHit(ControllerColliderHit other) {
+        if(other.gameObject.CompareTag("Orb")){
+            exp += 0.4f;
+            Destroy(other.gameObject);
+            Instantiate(OrbEffect, gameObject.transform.position, Quaternion.identity);
+            if(exp>=1.0f){
+                //レベルアップ
+                exp -=1.0f;
+            }
+            Debug.Log(exp);
+        }
+    }
+    
 
 }

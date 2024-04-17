@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class Bullet3Controller : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 40;
-    [SerializeField] float bulletDamage = 10;
+    [SerializeField] float bulletDamage = 3;
     [SerializeField] GameObject HitEffect;
     private EnemyStatus es;
     
@@ -34,7 +34,7 @@ public class BulletController : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy")){
             es = other.GetComponent<EnemyStatus>();
             es.Damage(bulletDamage);
-      
+           
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);

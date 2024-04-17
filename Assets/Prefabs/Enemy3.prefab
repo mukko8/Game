@@ -164,6 +164,7 @@ MonoBehaviour:
   pc: {fileID: 0}
   es: {fileID: 0}
   Defeat: {fileID: 3020467957176372358, guid: e6c4eeb17f1d05745b38478c619fec80, type: 3}
+  Orb: {fileID: 6695896414198816898, guid: 82a3050ee7d45b2499221ab34e3a1926, type: 3}
 --- !u!114 &237036436496950749
 MonoBehaviour:
   m_ObjectHideFlags: 0
