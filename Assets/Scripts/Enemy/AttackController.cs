@@ -8,6 +8,8 @@ public class AttackController : MonoBehaviour
     [SerializeField] float attackInterval = 20; // 攻撃間隔
     [SerializeField] PlayerController pc;
     [SerializeField] EnemyStatus es;
+    [SerializeField] GameObject Defeat;
+    [SerializeField] GameObject Orb;
 
     private float timer;
 
@@ -21,6 +23,11 @@ public class AttackController : MonoBehaviour
                 DestroyAllEnemies();
             }
             Destroy(gameObject);
+            //死亡エフェクト
+            Instantiate(Defeat, gameObject.transform.position, Quaternion.identity);
+            Destroy(Defeat,0.5f);
+            //オーブを落とす
+            Instantiate(Orb, gameObject.transform.position, Quaternion.identity);
         }
     }
 

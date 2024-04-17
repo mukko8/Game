@@ -19,8 +19,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float playerHp;
     public float PlayerHp { get { return playerHp; } }
+    [SerializeField] float exp;
+    public float PlayerExp { get { return exp; } }
 
     [SerializeField] AudioSourceController asc;
+    [SerializeField] GameObject Defeat;
+    [SerializeField] GameObject OrbEffect;
+    
 
     private float currentSpeed;
 
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public BulletLuncher bl;
     int weponIndex;
     bool rug = true;
+    bool isAlive ;
     float rugTime;
     public Image DamageFlash;
 
@@ -43,7 +49,9 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         weponIndex = 0;
         rugTime = 0.5f;
+        isAlive = true;
         DamageFlash.color = Color.clear;
+        exp =0;
         //playerHp = 100;
     }
 
@@ -51,7 +59,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentSpeed = speed;
-
+        if(isAlive)
         if (controller.isGrounded)
         {
             //ジャンプ
@@ -109,12 +117,16 @@ public class PlayerController : MonoBehaviour
             }
             Invoke("Timer", rugTime);
         }
+
         //ダメージエフェクトを徐々に消す
         DamageFlash.color = Color.Lerp(DamageFlash.color, Color.clear, Time.deltaTime);
         
+        //死亡時  
         if (playerHp <= 0)
         {
-            Destroy(gameObject);
+            Instantiate(Defeat, gameObject.transform.position, Quaternion.identity);
+            Destroy(Defeat,0.5f);
+            gameObject.SetActive (!gameObject.activeSelf);
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
@@ -129,6 +141,19 @@ public class PlayerController : MonoBehaviour
     {
         rug = true;
     }
-
+    //オーブ取得
+    private void OnControllerColliderHit(ControllerColliderHit other) {
+        if(other.gameObject.CompareTag("Orb")){
+            exp += 0.4f;
+            Destroy(other.gameObject);
+            Instantiate(OrbEffect, gameObject.transform.position, Quaternion.identity);
+            if(exp>=1.0f){
+                //レベルアップ
+                exp -=1.0f;
+            }
+            Debug.Log(exp);
+        }
+    }
+    
 
 }

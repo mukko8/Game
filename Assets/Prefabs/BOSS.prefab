@@ -160,6 +160,7 @@ MonoBehaviour:
   attackInterval: 20
   pc: {fileID: 0}
   es: {fileID: 0}
+  Defeat: {fileID: 3020467957176372358, guid: e6c4eeb17f1d05745b38478c619fec80, type: 3}
 --- !u!114 &2728127416484903615
 MonoBehaviour:
   m_ObjectHideFlags: 0

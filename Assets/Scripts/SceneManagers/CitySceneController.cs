@@ -30,7 +30,7 @@ public class CitySceneController : MonoBehaviour
         }
         else if (pc.PlayerHp <= 0)
         {
-            LoseScene();
+            Invoke("LoseScene",1.0f);
         }
     }
 
