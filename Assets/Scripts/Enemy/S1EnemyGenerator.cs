@@ -12,21 +12,14 @@ public class S1EnemyGenerator : MonoBehaviour
     public float span=2.0f;
     float delta=0;
     public float dist=20f;//敵が生成されるプレイヤーからの距離
-    public float EnemySum=100f;//出現する敵の数
+    public int EnemySum=100;//出現する敵の数
+    GameObject item;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         this.delta+=Time.deltaTime;
         if(this.delta>this.span){
             this.delta=0;
-            GameObject item;
             int dice=Random.Range(1,6);//1~5
             if(dice<=3){
                 item=Instantiate(Enemy1);
