@@ -18,8 +18,6 @@ public class Enemy2Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       //遅延コルーチンを開始
-       StartCoroutine(CanonballDelay());
        firstCanonball=false;//初期化
     }
 
@@ -71,15 +69,5 @@ public class Enemy2Controller : MonoBehaviour
             //タイマーをリセット
             delayTimer=0f;
         }
-    }
-    //遅延コルーチン：指定した待機時間後に最初のcanonballを出現させる
-    IEnumerator CanonballDelay(){
-        yield return new WaitForSeconds(canonballDelay);
-        Instantiate(
-            canonball,
-            transform.position,
-            Quaternion.identity
-        );
-        
     }
 }
