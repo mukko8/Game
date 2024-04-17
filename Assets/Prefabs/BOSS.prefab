@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 394994497442836019}
   - component: {fileID: 181460084364451088}
   - component: {fileID: 2502265159557972083}
+  - component: {fileID: 2728127416484903615}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Enemy
@@ -159,3 +160,18 @@ MonoBehaviour:
   attackInterval: 20
   pc: {fileID: 0}
   es: {fileID: 0}
+--- !u!114 &2728127416484903615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2207145902337341258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695c4a422360ec54ea44a502fe0a5a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1000
+  enemyHP: 0
+  attack: 50
