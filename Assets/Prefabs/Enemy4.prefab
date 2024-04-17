@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1369523260562758060}
   - component: {fileID: 1469144560697333279}
   - component: {fileID: 6518175144761624691}
+  - component: {fileID: 4371805950460560249}
   m_Layer: 0
   m_Name: Enemy4
   m_TagString: Untagged
@@ -159,3 +160,18 @@ MonoBehaviour:
   attackInterval: 20
   pc: {fileID: 0}
   es: {fileID: 0}
+--- !u!114 &4371805950460560249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048237415853812053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695c4a422360ec54ea44a502fe0a5a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  enemyHP: 0
+  attack: 10
