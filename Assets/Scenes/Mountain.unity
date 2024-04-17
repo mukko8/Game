@@ -453,6 +453,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5503313834651276435, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5503313834651276435, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -462,7 +466,7 @@ PrefabInstance:
       objectReference: {fileID: 1636246412}
     - target: {fileID: 8275763242830102030, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
       propertyPath: traceDist
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8468896837867747392, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
       propertyPath: m_Name
@@ -485,13 +489,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy3
       objectReference: {fileID: 0}
+    - target: {fileID: 1130102664417535725, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2594882818768970940, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2594882818768970940, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2594882818768970940, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -529,6 +537,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1636246412}
+    - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
+      propertyPath: stopDist
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
+      propertyPath: ballSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
+      propertyPath: canonball
+      value: 
+      objectReference: {fileID: 6534579147005400926, guid: e141bba28ee205e49bdf9ae3e0279917, type: 3}
+    - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
+      propertyPath: traceDist
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4065631966982729413, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: es
       value: 
@@ -537,6 +561,10 @@ PrefabInstance:
       propertyPath: pc
       value: 
       objectReference: {fileID: 1636246414}
+    - target: {fileID: 4065631966982729413, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
+      propertyPath: attackInterval
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -571,6 +599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1559469253}
     m_Modifications:
+    - target: {fileID: 1369523260562758060, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1469144560697333279, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
       propertyPath: player
       value: 
@@ -814,6 +846,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
+      propertyPath: playerHp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
       propertyPath: DamageFlash
       value: 
       objectReference: {fileID: 1199888200}
@@ -984,8 +1020,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGenerator
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3656746247902099662, guid: 522358cfa63e55d4e9b14c26ba0b59e3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1282,9 +1317,9 @@ MonoBehaviour:
   Enemy1: {fileID: 125524148}
   Enemy3: {fileID: 778726419}
   Enemy4: {fileID: 1385180035}
-  span: 2
+  span: 0
   dist: 20
-  EnemySum: 100
+  EnemySum: 200
 --- !u!1 &2089348323
 GameObject:
   m_ObjectHideFlags: 0

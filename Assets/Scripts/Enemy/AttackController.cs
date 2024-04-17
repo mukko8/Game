@@ -48,8 +48,6 @@ public class AttackController : MonoBehaviour
         }
     }
 
-
-
     void DestroyAllEnemies()
     {//BOSSがやられたらほかのEnemyも消える
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
