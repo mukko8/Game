@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -551,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 6534579147005400926, guid: e141bba28ee205e49bdf9ae3e0279917, type: 3}
     - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: traceDist
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4065631966982729413, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: es
@@ -609,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 1636246412}
     - target: {fileID: 1469144560697333279, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
       propertyPath: traceDist
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4048237415853812053, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
       propertyPath: m_Name
@@ -1317,7 +1317,7 @@ MonoBehaviour:
   Enemy1: {fileID: 125524148}
   Enemy3: {fileID: 778726419}
   Enemy4: {fileID: 1385180035}
-  span: 20
+  span: 5
   dist: 20
   EnemySum: 200
 --- !u!1 &2089348323
