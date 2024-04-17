@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy2AttackController : MonoBehaviour
 {
+    //[SerializeField] float attackInterval = 20; // 攻撃間隔
     [SerializeField] PlayerController pc;
     [SerializeField] EnemyStatus es;
 

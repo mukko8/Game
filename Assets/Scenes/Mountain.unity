@@ -1171,7 +1171,7 @@ MonoBehaviour:
   Enemy1: {fileID: 125524148}
   Enemy3: {fileID: 778726419}
   Enemy4: {fileID: 1385180035}
-  span: 0
+  span: 20
   dist: 20
   EnemySum: 30
 --- !u!1 &2089348323
