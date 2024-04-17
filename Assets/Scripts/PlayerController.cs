@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public BulletLuncher bl;
     int weponIndex;
     bool rug = true;
+    bool isAlive ;
     float rugTime;
     public Image DamageFlash;
 
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         weponIndex = 0;
         rugTime = 0.5f;
+        isAlive = true;
         DamageFlash.color = Color.clear;
         //playerHp = 100;
     }
@@ -51,7 +53,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         currentSpeed = speed;
-
+        
+        if(isAlive){
         if (controller.isGrounded)
         {
             //ジャンプ
@@ -109,11 +112,14 @@ public class PlayerController : MonoBehaviour
             }
             Invoke("Timer", rugTime);
         }
+
+        }
         //ダメージエフェクトを徐々に消す
         DamageFlash.color = Color.Lerp(DamageFlash.color, Color.clear, Time.deltaTime);
         
         if (playerHp <= 0)
         {
+            isAlive = false;
             Destroy(gameObject);
         }
 
