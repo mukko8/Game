@@ -118,3 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfc0d5786933da47804f9a29a8396a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pc: {fileID: 0}
+  canonDamage: 10
+  destroyTime: 10
+  canonSpeed: 1

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackController : MonoBehaviour
+public class Enemy2AttackController : MonoBehaviour
 {
     [SerializeField] float attackInterval = 20; // 攻撃間隔
     [SerializeField] PlayerController pc;
@@ -21,23 +21,6 @@ public class AttackController : MonoBehaviour
                 DestroyAllEnemies();
             }
             Destroy(gameObject);
-        }
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") && pc.PlayerHp != 0)//enemyHPはplayer側の変数に変更
-        {
-            timer += Time.deltaTime * 10;
-            if (timer >= attackInterval)
-            {
-                timer = 0;
-                pc.Damege(es.Attack);
-                if (pc.PlayerHp <= 0)
-                {
-                    Destroy(other.gameObject);
-                }
-            }
         }
     }
 
