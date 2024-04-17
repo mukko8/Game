@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 1636246412}
     - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: stopDist
-      value: 300
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: ballSpeed
@@ -551,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 6534579147005400926, guid: e141bba28ee205e49bdf9ae3e0279917, type: 3}
     - target: {fileID: 2753237452423727410, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: traceDist
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4065631966982729413, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: es

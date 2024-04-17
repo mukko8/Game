@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canonDamage: 10
+  destroyTime: 3
+  canonSpeed: 1
