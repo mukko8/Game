@@ -2791,6 +2791,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7665057731703178073, guid: 45c81634f53a56f489bc42376ffec220, type: 3}
     - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
+      propertyPath: attackRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
       propertyPath: DamageFlash
       value: 
       objectReference: {fileID: 1569866282}

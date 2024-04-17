@@ -329,11 +329,12 @@ MonoBehaviour:
   speedJump: 30
   rotateSpeed: 6
   playerHp: 100
+  exp: 0
   asc: {fileID: 3453265075128406731, guid: 46fa8e7e4018e4242aaf82350b393e92, type: 3}
   Defeat: {fileID: 3020467957176372358, guid: e6c4eeb17f1d05745b38478c619fec80, type: 3}
   OrbEffect: {fileID: 7665057731703178073, guid: 45c81634f53a56f489bc42376ffec220, type: 3}
-  ExpBar: {fileID: 4501238669936086057, guid: 8ab86770b99695e459d4068b153ae337, type: 3}
   bl: {fileID: 5395999383156072971}
+  attackRate: 1
   DamageFlash: {fileID: 8280290838230601024}
 --- !u!114 &3226470404715508432
 MonoBehaviour:

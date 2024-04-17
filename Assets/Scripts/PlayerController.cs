@@ -32,8 +32,9 @@ public class PlayerController : MonoBehaviour
 
     public BulletLuncher bl;
     int weponIndex;
+    public float attackRate = 1.0f;
     bool rug = true;
-    bool isAlive ;
+    bool isAlive ; 
     float rugTime;
     public Image DamageFlash;
 
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
         isAlive = true;
         DamageFlash.color = Color.clear;
         exp =0;
+        attackRate=1.0f;
         //playerHp = 100;
     }
 
@@ -149,9 +151,10 @@ public class PlayerController : MonoBehaviour
             Instantiate(OrbEffect, gameObject.transform.position, Quaternion.identity);
             if(exp>=1.0f){
                 //レベルアップ
+                attackRate *= 1.5f;
                 exp -=1.0f;
             }
-            Debug.Log(exp);
+            //Debug.Log(exp);
         }
     }
     

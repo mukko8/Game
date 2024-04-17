@@ -7,6 +7,7 @@ public class Bullet3Controller : MonoBehaviour
     [SerializeField] float bulletSpeed = 40;
     [SerializeField] float bulletDamage = 3;
     [SerializeField] GameObject HitEffect;
+    public PlayerController player;
     private EnemyStatus es;
     
     Ray ray;
@@ -33,7 +34,7 @@ public class Bullet3Controller : MonoBehaviour
      private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Enemy")){
             es = other.GetComponent<EnemyStatus>();
-            es.Damage(bulletDamage);
+            es.Damage(bulletDamage * player.attackRate);
            
         }
         Destroy(gameObject);

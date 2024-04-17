@@ -7,6 +7,7 @@ public class Bullet2Controller : MonoBehaviour
     [SerializeField] float bulletSpeed = 40.0f;
     [SerializeField] float bulletDamage = 2;
     [SerializeField] GameObject HitEffect;
+    public PlayerController player ;
     private EnemyStatus es;
 
     AudioSource audioSource;
@@ -41,12 +42,8 @@ public class Bullet2Controller : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Enemy")){
             es = other.GetComponent<EnemyStatus>();
-            es.Damage(bulletDamage);
-            //other.gameObject.enemyHP =0;
-           /* other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
-            if(other.gameObject.GetComponent<Enemy1Controller>().enemyHP<=0){
-                Destroy(other.gameObject);
-            }*/
+            es.Damage(bulletDamage * player.attackRate);
+           
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
