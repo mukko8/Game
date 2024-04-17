@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,10 +29,13 @@ public class PlayerController : MonoBehaviour
     int weponIndex;
     bool rug = true;
     float rugTime;
+    public Image DamageFlash;
 
     public void Damege(float value)
     {
         playerHp -= value;
+        //ダメージエフェクト　画面を赤くする
+        DamageFlash.color = new Color(0.7f, 0, 0, 0.7f);
     }
 
     void Start()
@@ -39,6 +43,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         weponIndex = 0;
         rugTime = 0.5f;
+        DamageFlash.color = Color.clear;
         //playerHp = 100;
     }
 
@@ -104,7 +109,9 @@ public class PlayerController : MonoBehaviour
             }
             Invoke("Timer", rugTime);
         }
-        //被弾
+        //ダメージエフェクトを徐々に消す
+        DamageFlash.color = Color.Lerp(DamageFlash.color, Color.clear, Time.deltaTime);
+        
         if (playerHp <= 0)
         {
             Destroy(gameObject);
