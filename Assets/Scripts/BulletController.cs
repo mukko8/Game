@@ -36,7 +36,7 @@ public class BulletController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             es = other.GetComponent<EnemyStatus>();
-            es.Damage(bulletDamage*player.attackRate);
+            es.Damage(bulletDamage);
       
         }
         Destroy(gameObject);

@@ -34,7 +34,7 @@ public class Bullet3Controller : MonoBehaviour
      private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Enemy")){
             es = other.GetComponent<EnemyStatus>();
-            es.Damage(bulletDamage * player.attackRate);
+            es.Damage(bulletDamage);
            
         }
         Destroy(gameObject);
