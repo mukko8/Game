@@ -38,10 +38,13 @@ public class S3EnemyGenerator : MonoBehaviour
             //Prefabのy座標取得
             float prefabY=item.transform.position.y;
 
-            //プレイヤーからdist離れたとこにランダムで生成
-            float x=Random.Range(player.position.x-dist,player.position.x+dist);
-            float z=Random.Range(player.position.z-dist,player.position.z+dist);
-            item.transform.position=new Vector3(x,prefabY,z);
+            if (transform.position.y <= 0)
+            {
+                //プレイヤーからdist離れたとこにランダムで生成
+                float x=Random.Range(player.transform.position.x-dist,player.transform.position.x+dist);
+                float z=Random.Range(player.transform.position.z-dist,player.transform.position.z+dist);
+                item.transform.position=new Vector3(x,prefabY,z);
+            }
         }   
     }
 }
