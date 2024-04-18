@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             //ジャンプ
             if (Input.GetButton("Jump"))
             {
-                moveDirection.y = speedJump;
+                moveDirection.y = speedJump;   
             }
             //ダッシュ
             if (Input.GetKey(KeyCode.LeftShift))
@@ -146,7 +146,8 @@ public class PlayerController : MonoBehaviour
     //オーブ取得
     private void OnControllerColliderHit(ControllerColliderHit other) {
         if(other.gameObject.CompareTag("Orb")){
-            exp += 0.4f;
+            exp += 0.35f;
+            Debug.Log(exp);
             Destroy(other.gameObject);
             Instantiate(OrbEffect, gameObject.transform.position, Quaternion.identity);
             if(exp>=1.0f){
@@ -154,7 +155,6 @@ public class PlayerController : MonoBehaviour
                 attackRate *= 1.5f;
                 exp -=1.0f;
             }
-            //Debug.Log(exp);
         }
     }
     
