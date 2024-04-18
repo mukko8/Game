@@ -6235,7 +6235,7 @@ MonoBehaviour:
   player: {fileID: 1404743786}
   Enemy1: {fileID: 1476122029}
   Enemy4: {fileID: 620680729}
-  span: 0
+  span: 2
   dist: 20
   EnemySum: 100
 --- !u!1 &1119827592 stripped
