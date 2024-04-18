@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 	public GameObject player;
 	PlayerController pc;
-	public GameObject StopScreen;
 	float cameraPosY = 3.0f;
 	float cameraPosZ = 6.0f;
 	//向きの変化量を保存する	
@@ -15,22 +14,11 @@ public class CameraController : MonoBehaviour {
 		transform.forward=player.transform.forward;
 	}
 	void Update(){
-			if (Input.GetKeyDown ("q")) {
-			//　ポーズUIのアクティブ、非アクティブを切り替え
-			StopScreen.SetActive (!StopScreen.activeSelf);
- 
-			//　ポーズUIが表示されてる時は停止
-			if(StopScreen.activeSelf) {
-				Time.timeScale = 0f;
-			//　ポーズUIが表示されてなければ通常通り進行
-			} else {
-				Time.timeScale = 1f;
-			}
-		}
+
 	}
 
 	void LateUpdate () {
-		if(player&&!StopScreen.activeSelf){
+		if(player){
 		//カメラの位置＝playerの上後方
 		transform.position = player.transform.position + (-player.transform.forward * cameraPosZ) + (player.transform.up * cameraPosY);
     //左右はplayerの旋回と連動するので　上下方向のみ  

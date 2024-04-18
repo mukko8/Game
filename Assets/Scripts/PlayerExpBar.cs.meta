@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f668751b052cd6d48a22b7fb8851b4d2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerController: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
+  - sliderExp: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
