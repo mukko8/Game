@@ -910,7 +910,7 @@ PrefabInstance:
     - target: {fileID: 4065631966982729413, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: Orb
       value: 
-      objectReference: {fileID: 7665057731703178073, guid: 45c81634f53a56f489bc42376ffec220, type: 3}
+      objectReference: {fileID: 6695896414198816898, guid: 82a3050ee7d45b2499221ab34e3a1926, type: 3}
     - target: {fileID: 4065631966982729413, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: Defeat
       value: 
@@ -1045,7 +1045,7 @@ PrefabInstance:
     - target: {fileID: 6518175144761624691, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
       propertyPath: Orb
       value: 
-      objectReference: {fileID: 7665057731703178073, guid: 45c81634f53a56f489bc42376ffec220, type: 3}
+      objectReference: {fileID: 6695896414198816898, guid: 82a3050ee7d45b2499221ab34e3a1926, type: 3}
     - target: {fileID: 6518175144761624691, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
       propertyPath: Defeat
       value: 
