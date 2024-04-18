@@ -248,17 +248,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99ef2ece80169c449418c3f2829a74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 35
-  speed: 20
-  speedJump: 20
+  gravity: 25
+  speed: 10
+  speedJump: 10
   rotateSpeed: 6
-  playerHp: 100
+  playerHp: 300
   exp: 0
   asc: {fileID: 0}
   Defeat: {fileID: 3020467957176372358, guid: e6c4eeb17f1d05745b38478c619fec80, type: 3}
   OrbEffect: {fileID: 7665057731703178073, guid: 45c81634f53a56f489bc42376ffec220, type: 3}
   bl: {fileID: 5395999383156072971}
-  DamageFlash: {fileID: 493069892288280604, guid: aa6732d0e9a4ab940bad9640348783b7, type: 3}
+  DamageFlash: {fileID: 2097044244310609538}
 --- !u!114 &3226470404715508432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +489,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6732d0e9a4ab940bad9640348783b7, type: 3}
+--- !u!114 &2097044244310609538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 493069892288280604, guid: aa6732d0e9a4ab940bad9640348783b7, type: 3}
+  m_PrefabInstance: {fileID: 2003414456056493726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3285406415324145682 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3915199755429240460, guid: aa6732d0e9a4ab940bad9640348783b7, type: 3}

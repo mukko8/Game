@@ -27,7 +27,7 @@ public class BulletController : MonoBehaviour
         //bulletを飛ばす
         gameObject.GetComponent<Rigidbody>().velocity = (ray.direction + ofset).normalized * bulletSpeed;
 
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 3.0f);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -27,7 +27,7 @@ public class Bullet3Controller : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
 
         //Debug.Log(hit.distance);
-        Destroy(gameObject,1.0f);
+        Destroy(gameObject,2.0f);
     }    
 
      private void OnTriggerEnter(Collider other) {
