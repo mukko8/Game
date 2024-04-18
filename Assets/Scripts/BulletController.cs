@@ -7,6 +7,7 @@ public class BulletController : MonoBehaviour
     [SerializeField] float bulletSpeed = 40;
     [SerializeField] float bulletDamage = 10;
     [SerializeField] GameObject HitEffect;
+    public PlayerController player;
     private EnemyStatus es;
 
     Ray ray;
@@ -27,7 +28,7 @@ public class BulletController : MonoBehaviour
         //bulletを飛ばす
         gameObject.GetComponent<Rigidbody>().velocity = (ray.direction + ofset).normalized * bulletSpeed;
 
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, 3.0f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,10 +36,12 @@ public class BulletController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             es = other.GetComponent<EnemyStatus>();
-            es.Damage(bulletDamage);
+            es.Damage(bulletDamage*player.attackRate);
+      
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
+        
         Destroy(HitEffect, 0.5f);
 
     }

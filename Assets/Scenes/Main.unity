@@ -306,6 +306,10 @@ PrefabInstance:
       propertyPath: asc
       value: 
       objectReference: {fileID: 201214194}
+    - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
+      propertyPath: playerHp
+      value: 10000000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -970,6 +974,10 @@ PrefabInstance:
       value: AudioSource
       objectReference: {fileID: 0}
     - target: {fileID: 5777196491420213957, guid: 46fa8e7e4018e4242aaf82350b393e92, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777196491420213957, guid: 46fa8e7e4018e4242aaf82350b393e92, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -1483,7 +1491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 217878616161995904, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2594882818768970940, guid: 4661b6c12f162e242b6825c9faba8af7, type: 3}
       propertyPath: m_LocalPosition.x

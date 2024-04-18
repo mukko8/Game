@@ -147,5 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 40
-  bulletDamage: 10
+  bulletDamage: 13
   HitEffect: {fileID: 5070953585444477548, guid: 0089176b3a2596b41acf98ca857bc159, type: 3}
+  player: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
