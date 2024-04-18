@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class S1EnemyGenerator : MonoBehaviour
 {
-    public GameObject player;
+    public Transform player;
     public GameObject Enemy1;
     public GameObject Enemy4;
     public float span=2.0f;
@@ -30,8 +30,8 @@ public class S1EnemyGenerator : MonoBehaviour
             float prefabY=item.transform.position.y;
             
             //プレイヤーからdist離れたとこにランダムで生成
-            float x=Random.Range(player.transform.position.x-dist,player.transform.position.x+dist);
-            float z=Random.Range(player.transform.position.z-dist,player.transform.position.z+dist);
+            float x=Random.Range(player.position.x-dist,player.position.x+dist);
+            float z=Random.Range(player.position.z-dist,player.position.z+dist);
             item.transform.position=new Vector3(x,prefabY,z);
             EnemySum--;
             if(EnemySum==0){

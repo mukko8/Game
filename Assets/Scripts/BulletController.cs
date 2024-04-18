@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour
     [SerializeField] float bulletDamage = 10;
     [SerializeField] GameObject HitEffect;
     private EnemyStatus es;
-    
+
     Ray ray;
     RaycastHit hit;
 
@@ -19,31 +19,28 @@ public class BulletController : MonoBehaviour
             Camera.main.ViewportToScreenPoint(Camera.main.rect.center)
         );
         //対象との距離と縦方向の向きに応じて発射角度に補正をつける
-        Vector3 ofset = new Vector3(0,0.1f,0);
-        if(Physics.Raycast(ray,out hit, 100f) &&hit.distance>=5.0f) {
-            ofset.y =3.1f/hit.distance + Camera.main.transform.forward.y/3.0f;
+        Vector3 ofset = new Vector3(0, 0.1f, 0);
+        if (Physics.Raycast(ray, out hit, 100f) && hit.distance >= 5.0f)
+        {
+            ofset.y = 3.1f / hit.distance + Camera.main.transform.forward.y / 3.0f;
         }
         //bulletを飛ばす
-        gameObject.GetComponent<Rigidbody>().velocity=(ray.direction+ofset).normalized* bulletSpeed;
+        gameObject.GetComponent<Rigidbody>().velocity = (ray.direction + ofset).normalized * bulletSpeed;
 
-        //Debug.Log(hit.distance);
-        Destroy(gameObject,1.0f);
-    }    
+        Destroy(gameObject, 1.0f);
+    }
 
-     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("Enemy")){
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
             es = other.GetComponent<EnemyStatus>();
             es.Damage(bulletDamage);
-            //other.gameObject.enemyHP =0;
-           /* other.gameObject.GetComponent<Enemy1Controller>().enemyHP -= bulletDamage;
-            if(other.gameObject.GetComponent<Enemy1Controller>().enemyHP<=0){
-                Destroy(other.gameObject);
-            }*/
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
-        Destroy(HitEffect,0.5f);
-    
+        Destroy(HitEffect, 0.5f);
+
     }
 
 }

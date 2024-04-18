@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class S3EnemyGenerator : MonoBehaviour
 {
-    public GameObject player;
+    public Transform player;
     public GameObject Enemy1;
     public GameObject Enemy3;
     public GameObject Enemy4;
