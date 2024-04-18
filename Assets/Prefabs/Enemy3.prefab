@@ -119,7 +119,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -146,8 +146,8 @@ MonoBehaviour:
   player: {fileID: 0}
   canonball: {fileID: 6534579147005400926, guid: e141bba28ee205e49bdf9ae3e0279917, type: 3}
   ballSpeed: 4
-  traceDist: 15
-  stopDist: 5
+  traceDist: 300
+  stopDist: 40
 --- !u!114 &4065631966982729413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,11 +160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9229848af2809c4e98795cfecf4727c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackInterval: 20
+  attackInterval: 2
   pc: {fileID: 0}
-  es: {fileID: 0}
+  es: {fileID: 237036436496950749}
   Defeat: {fileID: 3020467957176372358, guid: e6c4eeb17f1d05745b38478c619fec80, type: 3}
-  Orb: {fileID: 6695896414198816898, guid: 82a3050ee7d45b2499221ab34e3a1926, type: 3}
+  Orb: {fileID: 7665057731703178073, guid: 45c81634f53a56f489bc42376ffec220, type: 3}
 --- !u!114 &237036436496950749
 MonoBehaviour:
   m_ObjectHideFlags: 0

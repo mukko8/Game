@@ -2,25 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy2Controller : MonoBehaviour
 {
     public Transform player;
     public GameObject canonball;
-    public float ballSpeed=50.0f;
+    public float ballSpeed=10.0f;
     private int count=0;
-    float rotationSpeed=10.0f;//方向回転スピード
-    float canonballDelay=10.0f; //最初のcanonballが出るまでの待機時間
-    float delayTimer=0f;//待機時間計算用
-    //最初のcanonballが出現したかどうか
-    bool firstCanonball;
+    //索敵範囲
+    public float traceDist =30.0f;
+    float rotationSpeed=30.0f;//方向回転スピード
+    NavMeshAgent nav;
     Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-       //遅延コルーチンを開始
-       StartCoroutine(CanonballDelay());
-       firstCanonball=false;//初期化
+       //firstCanonball=false;//初期化
+       nav = GetComponent<NavMeshAgent>();
+        //毎フレーム距離の計測をする必要はないのでコルーチンで行う。
+        StartCoroutine(CheckDist());
     }
 
     // Update is called once per frame
@@ -28,36 +29,30 @@ public class Enemy2Controller : MonoBehaviour
     {
         
     }
-    void OnTriggerStay(Collider other){
-        if(other.gameObject.CompareTag("Player")){
-            //transform.LookAt(player);//プレイヤーの方を向く(速度調整できない)
+    IEnumerator CheckDist()
+    {
+        while (true)
+        {
+            //1秒間に10回距離を計測する。
+            yield return new WaitForSeconds(0.1f);
+            //プレイヤーとの距離を計測
+            float dist = Vector3.Distance(player.position, transform.position);
             
-            //プレイヤーの方向への回転を計算
-            Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
-            //プレイヤーの方向に滑らかに回転
-            transform.rotation=Quaternion.Slerp(
-                transform.rotation,
-                targetRotation,
-                Time.deltaTime*rotationSpeed
-            );
-            //delayTimerを増加
-            delayTimer+=Time.deltaTime;
-            count++;
-            //Debug.Log(count);
-            //最初のcanonballが出ていないか&待機時間達したか確認
-            if(!firstCanonball&&delayTimer>=canonballDelay){
-                //最初のcanonballを出現させる
-                canonball=Instantiate(
-                    canonball,
-                    transform.position,
-                    Quaternion.identity
-                    );
-                firstCanonball=true;//最初のcanonballが出現したこと
-                /*CanonballController cc=canonball.GetComponent<CanonballController>();
-                AttackController ac=GameObject.FindObjectOfType<AttackController>();
-                cc.ac=ac;
-                */
-            }
+            //索敵範囲に入ったか？
+            if (dist < traceDist)
+            {
+                RotationCalc();
+                //プレイヤーの方向への回転を計算
+                Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
+                //プレイヤーの方向に滑らかに回転
+                transform.rotation=Quaternion.Slerp(
+                    transform.rotation,
+                    targetRotation,
+                    Time.deltaTime*rotationSpeed
+                );
+                count++;
+                //Debug.Log(count);
+                
                 //連射間隔
                 if(count%ballSpeed==0){
                 //canonballを出現させる
@@ -66,20 +61,20 @@ public class Enemy2Controller : MonoBehaviour
                     transform.position,
                     Quaternion.identity
                     );
-                
+                }
+                    
             }
-            //タイマーをリセット
-            delayTimer=0f;
+                //タイマーをリセット
+                //delayTimer=0f;
+            else{
+                //探索範囲から出たら追跡終了
+                nav.isStopped=true;
+            }
         }
     }
-    //遅延コルーチン：指定した待機時間後に最初のcanonballを出現させる
-    IEnumerator CanonballDelay(){
-        yield return new WaitForSeconds(canonballDelay);
-        Instantiate(
-            canonball,
-            transform.position,
-            Quaternion.identity
-        );
-        
+    void RotationCalc(){
+        //プレイヤーの方向への回転を計算
+        Quaternion targetRotation=Quaternion.LookRotation(player.position-transform.position);
     }
 }
+
