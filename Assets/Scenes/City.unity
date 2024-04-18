@@ -2900,16 +2900,24 @@ PrefabInstance:
       objectReference: {fileID: 182579269}
     - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
       propertyPath: speed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
       propertyPath: Defeat
       value: 
       objectReference: {fileID: 3020467957176372358, guid: e6c4eeb17f1d05745b38478c619fec80, type: 3}
     - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
+      propertyPath: gravity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
       propertyPath: OrbEffect
       value: 
       objectReference: {fileID: 7665057731703178073, guid: 45c81634f53a56f489bc42376ffec220, type: 3}
+    - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
+      propertyPath: speedJump
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7382853751509684696, guid: c97df4c9d3936e444ad6ba496d11f0f0, type: 3}
       propertyPath: DamageFlash
       value: 
@@ -6235,7 +6243,7 @@ MonoBehaviour:
   player: {fileID: 1404743786}
   Enemy1: {fileID: 1476122029}
   Enemy4: {fileID: 620680729}
-  span: 0
+  span: 1
   dist: 20
   EnemySum: 100
 --- !u!1 &1119827592 stripped
@@ -10636,7 +10644,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369523260562758060, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
       propertyPath: m_Speed
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1469144560697333279, guid: 7c340d01c270ab9478bf71fd54dd4037, type: 3}
       propertyPath: player
@@ -12822,7 +12830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5503313834651276435, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
       propertyPath: m_Speed
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5503313834651276435, guid: 1e6714844aadd1247b2c9526ca5d566e, type: 3}
       propertyPath: m_Enabled
