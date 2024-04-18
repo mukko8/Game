@@ -25,14 +25,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioSourceController asc;
     [SerializeField] GameObject Defeat;
     [SerializeField] GameObject OrbEffect;
-    
+    [SerializeField] GameObject LevelUpEffect;
+    public GameObject StopScreen;
 
     private float currentSpeed;
 
 
     public BulletLuncher bl;
     int weponIndex;
-    public float attackRate = 1.0f;
+    public float attackRate;
     bool rug = true;
     bool isAlive ; 
     float rugTime;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
         rugTime = 0.5f;
         isAlive = true;
         DamageFlash.color = Color.clear;
-        exp =0;
+        //exp = 0;
         attackRate=1.0f;
         //playerHp = 100;
     }
@@ -136,26 +137,44 @@ public class PlayerController : MonoBehaviour
         controller.Move(globalDirection * Time.deltaTime);
 
         if (controller.isGrounded) moveDirection.y = 0;
-
-
+        //ストップ処理
+        if (Input.GetKeyDown ("q")) {
+			//　ポーズUIのアクティブ、非アクティブを切り替え
+			StopScreen.SetActive (!StopScreen.activeSelf);
+ 
+			//　ポーズUIが表示されてる時は停止
+			if(StopScreen.activeSelf) {
+				Time.timeScale = 0f;
+			//　ポーズUIが表示されてなければ通常通り進行
+			} else {
+				Time.timeScale = 1f;
+			}
+		}
     }
+
     void Timer()
     {
         rug = true;
     }
     //オーブ取得
-    private void OnControllerColliderHit(ControllerColliderHit other) {
+    public void OnControllerColliderHit(ControllerColliderHit other) {
         if(other.gameObject.CompareTag("Orb")){
             exp += 0.35f;
             Debug.Log(exp);
             Destroy(other.gameObject);
             Instantiate(OrbEffect, gameObject.transform.position, Quaternion.identity);
             if(exp>=1.0f){
-                //レベルアップ
-                attackRate *= 1.5f;
+                LevelUp();
                 exp -=1.0f;
             }
         }
+    }
+
+    void LevelUp(){
+        //レベルアップ
+        attackRate = 2.0f;
+        Instantiate(LevelUpEffect, gameObject.transform.position+Vector3.up, Quaternion.identity);
+
     }
     
 

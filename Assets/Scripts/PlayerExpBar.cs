@@ -13,15 +13,14 @@ public class PlayerExpBar : MonoBehaviour
     {
         //SliderのValueを0にする
         sliderExp.value = 0;
-        
     }
 
     void Update()
     {
         //expの値をスライダーに反映させる
-        //sliderExp.value = playerController.PlayerExp;
-        sliderExp.value =0;
-        
+        sliderExp.value = playerController.PlayerExp;
+        //Debug.Log(playerController.PlayerExp);
+        //sliderExp.value += 0.01f;
         
     }
 }

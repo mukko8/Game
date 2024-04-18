@@ -41,6 +41,7 @@ public class BulletController : MonoBehaviour
         }
         Destroy(gameObject);
         Instantiate(HitEffect, hit.point, Quaternion.identity);
+        
         Destroy(HitEffect, 0.5f);
 
     }
